@@ -1,0 +1,921 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Veille Hypertension | 2026-06-21 | 42 articles | 7 thèmes</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Segoe UI', Arial, sans-serif; font-size: 14px; line-height: 1.6; background: #f4f6f9; color: #2c3e50; }
+  .header { background: linear-gradient(135deg, #1a3a5c 0%, #2980b9 100%); color: #fff; padding: 30px 40px; }
+  .header h1 { font-size: 24px; margin-bottom: 6px; }
+  .header .meta { font-size: 13px; opacity: 0.85; }
+  .stats-bar { background: #2c3e50; color: #ecf0f1; display: flex; flex-wrap: wrap; gap: 20px; padding: 14px 40px; font-size: 13px; }
+  .stats-bar span { background: rgba(255,255,255,0.12); padding: 4px 12px; border-radius: 12px; }
+  .nav { background: #fff; border-bottom: 2px solid #e0e6ed; padding: 12px 40px; display: flex; flex-wrap: wrap; gap: 8px; }
+  .nav a { color: #2980b9; text-decoration: none; font-size: 13px; padding: 4px 12px; border-radius: 12px; border: 1px solid #d0dce8; }
+  .nav a:hover { background: #2980b9; color: #fff; }
+  .container { max-width: 1100px; margin: 0 auto; padding: 30px 20px; }
+  .topic-section { margin-bottom: 40px; }
+  .topic-header { background: #1a3a5c; color: #fff; padding: 12px 20px; border-radius: 8px 8px 0 0; display: flex; justify-content: space-between; align-items: center; }
+  .topic-header h2 { font-size: 16px; }
+  .topic-header .count { background: rgba(255,255,255,0.2); padding: 2px 10px; border-radius: 10px; font-size: 13px; }
+  .empty-topic { background: #fff; border: 1px solid #dce3eb; border-top: none; border-radius: 0 0 8px 8px; padding: 20px; color: #8899aa; font-style: italic; font-size: 13px; }
+  .article-card { background: #fff; border: 1px solid #dce3eb; border-top: none; padding: 20px 24px; }
+  .article-card:last-child { border-radius: 0 0 8px 8px; }
+  .article-card + .article-card { border-top: 1px solid #edf0f4; }
+  .article-title { font-size: 15px; font-weight: 600; color: #1a3a5c; margin-bottom: 8px; }
+  .article-title a { color: #1a3a5c; text-decoration: none; }
+  .article-title a:hover { color: #2980b9; text-decoration: underline; }
+  .article-meta { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 12px; font-size: 12px; }
+  .badge { padding: 2px 8px; border-radius: 10px; font-weight: 600; }
+  .badge-journal { background: #eaf2fb; color: #1a6fa0; }
+  .badge-tier1 { background: #d5f5e3; color: #1a7a42; }
+  .badge-tier2 { background: #fef9e7; color: #9a6d0a; }
+  .badge-tier3 { background: #fdf2f8; color: #8e44ad; }
+  .badge-na { background: #f0f3f6; color: #7f8c8d; }
+  .badge-date { background: #f8f9fa; color: #495057; }
+  .badge-type { background: #e8f4fd; color: #1a5c8f; }
+  .authors { font-size: 12px; color: #666; margin-bottom: 10px; }
+  .section-label { font-weight: 700; font-size: 12px; text-transform: uppercase; letter-spacing: 0.5px; color: #2980b9; margin-bottom: 4px; margin-top: 12px; }
+  .section-text { font-size: 13px; color: #34495e; margin-bottom: 2px; }
+  .implications-box { background: #f0f7ff; border-left: 4px solid #2980b9; padding: 10px 14px; margin-top: 12px; border-radius: 0 6px 6px 0; }
+  .implications-box .section-label { color: #1a5c8f; }
+  .implications-box .section-text { color: #1a3a5c; }
+  .letter-note { background: #fafafa; border-left: 3px solid #bdc3c7; padding: 8px 12px; font-size: 12px; color: #7f8c8d; font-style: italic; margin-top: 8px; }
+  footer { text-align: center; padding: 20px; font-size: 12px; color: #8899aa; border-top: 1px solid #dce3eb; margin-top: 20px; }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>Veille Scientifique — Hypertension Artérielle</h1>
+  <div class="meta">Édition du 21 juin 2026 &nbsp;|&nbsp; Fenêtre d'indexation : 2026-06-20 → 2026-06-21 &nbsp;|&nbsp; Source : PubMed (NCBI)</div>
+</div>
+
+<div class="stats-bar">
+  <span>📄 42 nouveaux articles</span>
+  <span>🏷️ 7 thèmes</span>
+  <span>🗄️ 383 articles archivés</span>
+  <span>🥇 Tier 1 : 0</span>
+  <span>🥈 Tier 2 : 0</span>
+  <span>🥉 Tier 3 : 1</span>
+  <span>📋 NA : 41</span>
+</div>
+
+<div class="nav">
+  <a href="#epi">1 · Épidémiologie (25)</a>
+  <a href="#acei">2 · IEC / RAAS (1)</a>
+  <a href="#arb">3 · ARB (0)</a>
+  <a href="#ccb">4 · CCB (0)</a>
+  <a href="#diur">5 · Diurétiques/β-bloquants (0)</a>
+  <a href="#trial">6 · Essais cliniques (3)</a>
+  <a href="#env">7 · Facteurs de risque (13)</a>
+</div>
+
+<div class="container">
+
+<!-- ============================================================ -->
+<!-- TOPIC 1: EPIDEMIOLOGY -->
+<!-- ============================================================ -->
+<div class="topic-section" id="epi">
+  <div class="topic-header">
+    <h2>1. Épidémiologie de l'Hypertension</h2>
+    <span class="count">25 articles</span>
+  </div>
+
+  <!-- 1. PMID 42321737 -->
+  <div class="article-card">
+    <div class="article-title"><a href="https://pubmed.ncbi.nlm.nih.gov/42321737/" target="_blank">Degree of urbanization and the prevalence of hypertension and diabetes mellitus in South Korea (Insight from Gyeonggi Province): A cross-sectional analysis with temporal trends, 2008–2023</a></div>
+    <div class="article-meta">
+      <span class="badge badge-journal">BMC Public Health</span>
+      <span class="badge badge-na">Tier NA</span>
+      <span class="badge badge-date">2026-06-19</span>
+      <span class="badge badge-type">Article original</span>
+    </div>
+    <div class="authors">Choi SS, Jung J, Kim JH, Jung SY, Yoo KD, Moon D, Lee SN, Jang WY, Jung JH, Her SH &nbsp;| PMID: 42321737 | <a href="https://doi.org/10.1186/s12889-026-28174-7" target="_blank">DOI</a></div>
+    <div class="section-label">Résultats</div>
+    <div class="section-text">Cette analyse transversale portant sur 41 983 adultes résidant dans la province de Gyeonggi-do (Corée du Sud) en 2020 a utilisé la classification DegUrba de l'ONU pour distinguer zones urbaines, semi-urbaines et rurales. La prévalence de l'hypertension était la plus élevée dans les zones rurales (29,4 %) versus 19,4 % en zones urbaines et 20,1 % en zones semi-urbaines (p &lt; 0,001), et la même tendance a été observée pour le diabète (13,4 % vs 8,3 % vs 8,6 %). Après ajustement complet (âge, sexe, éducation, tabac, alcool), le désavantage rural pour l'hypertension restait significatif par rapport aux zones semi-urbaines (OR 1,14 ; IC 95 % 1,02–1,28 ; p = 0,026), et plus prononcé dans l'analyse de sensibilité restreinte aux municipalités géographiquement stables (OR 1,16 ; p = 0,014). Sur la période 2008–2023, les prévalences ajustées selon l'âge ont augmenté significativement pour l'hypertension (p = 0,002) et le diabète (p &lt; 0,001), avec une persistance de l'écart rural tout au long de la période. Ces résultats soulignent que même dans un système de couverture sanitaire universelle, les inégalités cardiométaboliques selon le lieu de résidence restent un enjeu de santé publique prioritaire.</div>
+    <div class="implications-box">
+      <div class="section-label">Implications Medical Affairs</div>
+      <div class="section-text">Ce travail quantifie un gradient de prévalence hypertensive persistant dans un pays à couverture médicale universelle, confirmant que l'accès aux soins ne suffit pas à effacer les disparités géographiques. Les équipes Medical Affairs doivent intégrer ces données pour cibler les programmes de sensibilisation et d'amélioration de l'observance thérapeutique dans les zones rurales d'Asie du Pacifique. Ces résultats plaident pour des partenariats renforcés avec les autorités de santé locales afin de définir des stratégies de dépistage et de prise en charge différenciées selon le degré d'urbanisation.</div>
+    </div>
+  </div>
+
+  <!-- 2. PMID 42321743 -->
+  <div class="article-card">
+    <div class="article-title"><a href="https://pubmed.ncbi.nlm.nih.gov/42321743/" target="_blank">Measuring integrated hypertension care in community health centers: a cross-sectional study based on the Rainbow Model of Integrated Care in Chengdu, China</a></div>
+    <div class="article-meta">
+      <span class="badge badge-journal">BMC Health Services Research</span>
+      <span class="badge badge-na">Tier NA</span>
+      <span class="badge badge-date">2026-06-19</span>
+      <span class="badge badge-type">Article original</span>
+    </div>
+    <div class="authors">Zhang Y, Li W, Zou C, Liu L, Yang Z, Yang J, Chen Z, Liu C, Shen C, Liao X &nbsp;| PMID: 42321743 | <a href="https://doi.org/10.1186/s12913-026-14845-z" target="_blank">DOI</a></div>
+    <div class="section-label">Résultats</div>
+    <div class="section-text">Cette étude transversale exhaustive a évalué les 110 centres de santé communautaire (CHC) de Chengdu (Chine) à l'aide du Rainbow Model of Integrated Care Measurement Tool (RMIC-MT) entre novembre 2021 et janvier 2022, avec un taux de réponse efficace de 84,6 %. Les scores d'intégration variaient selon les six dimensions : la dimension personne-communauté obtenait le score le plus élevé (4,31/5) tandis que l'intégration organisationnelle était la plus faible (2,96/5), révélant un déficit structurel majeur. La modélisation multiniveau a identifié comme facteurs favorables au niveau d'intégration : une éducation élevée du personnel (β = −0,122), la présence d'urgences (β = −0,158), la gestion spécifique des maladies chroniques (β = −0,170) et la participation à des alliances hospitalières (β = −0,217). A contrario, la présence de services d'ophtalmologie (β = 0,110) et l'utilisation de dispositifs connectés (β = 0,204) étaient associées négativement à l'intégration, suggérant un risque de fragmentation des soins. Ces résultats indiquent que l'intégration institutionnelle reste suboptimale dans les CHC chinois, avec un besoin particulier de renforcer les capacités organisationnelles et de coordination inter-établissements.</div>
+    <div class="implications-box">
+      <div class="section-label">Implications Medical Affairs</div>
+      <div class="section-text">Ce travail fournit une cartographie rigoureuse des lacunes d'intégration dans la prise en charge primaire de l'hypertension en Chine, marché prioritaire pour les thérapies antihypertensives. Les partenariats avec des systèmes de santé primaires nécessitent de cibler le renforcement organisationnel et la formation du personnel plutôt que la seule introduction technologique. Ces données peuvent guider des programmes de soutien aux professionnels de santé en première ligne pour améliorer le contrôle tensionnel à l'échelle populationnelle.</div>
+    </div>
+  </div>
+
+  <!-- 3. PMID 42321350 -->
+  <div class="article-card">
+    <div class="article-title"><a href="https://pubmed.ncbi.nlm.nih.gov/42321350/" target="_blank">Recent developments and challenges in hypertensive dementia over the past year</a></div>
+    <div class="article-meta">
+      <span class="badge badge-journal">Hypertension Research</span>
+      <span class="badge badge-na">Tier NA</span>
+      <span class="badge badge-date">2026-06-19</span>
+      <span class="badge badge-type">Éditorial</span>
+    </div>
+    <div class="authors">Mogi M, Hoshide S, Kario K &nbsp;| PMID: 42321350 | <a href="https://doi.org/10.1038/s41440-026-02714-5" target="_blank">DOI</a></div>
+    <div class="section-label">Résultats</div>
+    <div class="section-text">Cet éditorial synthétise les avancées publiées après la parution des Recommandations JSH2025 (Guidelines for the Management of Elevated Blood Pressure and Hypertension 2025) et de la déclaration du groupe de travail PCIHM (Prevention of Cognitive Impairment by Hypertension Management). La variabilité tensionnelle, plutôt que le niveau absolu de pression artérielle, émerge comme facteur prépondérant dans l'induction de la démence, dépassant en importance le niveau moyen de PA. Les données récentes montrent qu'un contrôle tensionnel strict chez les sujets âgés ne conduit pas à un déclin cognitif, justifiant des cibles plus basses, mais avec une approche individualisée pour les patients ayant déjà une atteinte des petits vaisseaux cérébraux. Le nombre de publications PubMed associant «high blood pressure» et «dementia» a atteint près de 800 en 2025 et dépassé 220 au seul premier trimestre 2026, signalant une accélération de la recherche dans ce domaine. L'auteur souligne la nécessité d'éviter une approche uniforme chez les sujets âgés et d'individualiser les cibles tensionnelles, notamment pour prévenir les hypotensions excessives chez les patients avec maladie des petits vaisseaux préexistante.</div>
+    <div class="implications-box">
+      <div class="section-label">Implications Medical Affairs</div>
+      <div class="section-text">La mise en avant de la variabilité tensionnelle comme facteur clé de risque cognitif ouvre une piste pour positionner les antihypertenseurs à longue durée d'action offrant une couverture tensionnelle plus stable. Les équipes Medical Affairs doivent suivre de près les débats post-JSH2025 sur les cibles tensionnelles chez les sujets âgés pour adapter le positionnement scientifique aux marchés asiatiques. Des programmes d'éducation médicale sur la gestion individualisée de la PA chez les patients âgés avec risque cognitif constituent une opportunité de dialogue avec les prescripteurs gériatres et neurologues.</div>
+    </div>
+  </div>
+
+  <!-- 4. PMID 42321603 -->
+  <div class="article-card">
+    <div class="article-title"><a href="https://pubmed.ncbi.nlm.nih.gov/42321603/" target="_blank">Qualitative insights into the experiences and goals of people living with severe difficult-to-treat hypertension in Australia</a></div>
+    <div class="article-meta">
+      <span class="badge badge-journal">BMC Cardiovascular Disorders</span>
+      <span class="badge badge-na">Tier NA</span>
+      <span class="badge badge-date">2026-06-19</span>
+      <span class="badge badge-type">Étude qualitative</span>
+    </div>
+    <div class="authors">Hill M, Godsell J &nbsp;| PMID: 42321603 | <a href="https://doi.org/10.1186/s12872-026-06141-9" target="_blank">DOI</a></div>
+    <div class="section-label">Résultats</div>
+    <div class="section-text">Douze adultes australiens souffrant d'hypertension sévère difficile à traiter (moyenne d'âge 65 ans, durée moyenne depuis le diagnostic 22 ans) ont été interrogés lors d'entretiens semi-structurés d'une heure afin d'explorer leur vécu et leurs objectifs thérapeutiques, notamment vis-à-vis de la dénervation rénale (RDN). L'analyse thématique inductive a identifié quatre thèmes principaux : diagnostic et surveillance tensionnelle, impact sur la qualité de vie (incluant stigmatisation et limitations quotidiennes), stratégies de gestion pharmacologique et non-pharmacologique, et perception de la RDN comme alternative thérapeutique. Les participants décrivaient un poids psychosocial significatif associé à l'hypertension réfractaire, avec un sentiment de contrôle limité malgré une polythérapie ancienne. L'intérêt pour la RDN était élevé, motivé par le désir de réduire la charge médicamenteuse et les effets secondaires, mais tempéré par des inquiétudes sur la durabilité des effets et le niveau d'information disponible. Cette étude financée par Medtronic souligne la nécessité d'intégrer un soutien psychosocial et une éducation renforcée dans la gestion clinique de ces patients.</div>
+    <div class="implications-box">
+      <div class="section-label">Implications Medical Affairs</div>
+      <div class="section-text">Cette étude qualitative révèle un besoin non satisfait majeur en matière de soutien psychosocial et d'éducation thérapeutique chez les patients hypertendus réfractaires, au-delà du seul contrôle tensionnel pharmacologique. Le fort intérêt pour la dénervation rénale comme alternative de décharge thérapeutique confirme la pertinence des stratégies interventionnelles dans cette population, avec des implications pour les partenariats cardiologie-interventionnelle. Les équipes Medical Affairs peuvent s'appuyer sur ces données patient-centrées pour construire des programmes d'accompagnement personnalisé et de formation aux soignants sur la dimension psychosociale de l'HTA réfractaire.</div>
+    </div>
+  </div>
+
+  <!-- 5. PMID 42321352 -->
+  <div class="article-card">
+    <div class="article-title"><a href="https://pubmed.ncbi.nlm.nih.gov/42321352/" target="_blank">Acute changes in plasma renin concentration after renal denervation: an exploratory analysis of a potential procedural marker</a></div>
+    <div class="article-meta">
+      <span class="badge badge-journal">Hypertension Research</span>
+      <span class="badge badge-na">Tier NA</span>
+      <span class="badge badge-date">2026-06-19</span>
+      <span class="badge badge-type">Article original</span>
+    </div>
+    <div class="authors">Kang Y, Ma Y, Hong M, Chen Y, Pan X, Xu J, Wang J &nbsp;| PMID: 42321352 | <a href="https://doi.org/10.1038/s41440-026-02713-6" target="_blank">DOI</a></div>
+    <div class="section-label">Résultats</div>
+    <div class="section-text">Cette analyse exploratoire publiée par l'Institut Shanghai de l'Hypertension (Hôpital Ruijin) évalue les variations aiguës de la concentration plasmatique de rénine (PRC) comme marqueur procédural potentiel de la dénervation rénale (RDN). L'étude examine si les changements de PRC immédiatement après la procédure de RDN peuvent prédire l'efficacité tensionnelle à long terme, ce qui représente un besoin clinique non satisfait majeur. Les auteurs présentent une analyse exploratoire suggérant que des modifications précoces de la PRC reflètent le degré de sympatholyse rénale obtenu. La PRC pourrait ainsi servir de biomarqueur procédural peropératoire permettant d'objectiver le succès technique de la dénervation et d'identifier en temps réel les patients «responders». Si ces données exploratoires sont confirmées, ce marqueur biologique pourrait révolutionner la sélection des candidats à la RDN et optimiser la technique procédurale.</div>
+    <div class="implications-box">
+      <div class="section-label">Implications Medical Affairs</div>
+      <div class="section-text">L'identification d'un biomarqueur peropératoire de réponse à la dénervation rénale représente un avancement potentiellement majeur pour la sélection des patients et l'évaluation de l'efficacité procédurale. Les équipes Medical Affairs doivent suivre ce programme de recherche de Shanghai pour anticiper des publications confirmatives qui pourraient influencer les algorithmes décisionnels en HTA résistante. Ce travail exploratoire renforce l'intérêt pour des études de biomarqueurs associés à la RDN, avec un potentiel de différenciation dans le positionnement des thérapies de dénervation.</div>
+    </div>
+  </div>
+
+  <!-- 6. PMID 42321302 -->
+  <div class="article-card">
+    <div class="article-title"><a href="https://pubmed.ncbi.nlm.nih.gov/42321302/" target="_blank">Identification and characterization of intracerebral hemorrhage events in elderly veterans with Alzheimer's disease in the Veterans Affairs healthcare system</a></div>
+    <div class="article-meta">
+      <span class="badge badge-journal">Scientific Reports</span>
+      <span class="badge badge-na">Tier NA</span>
+      <span class="badge badge-date">2026-06-19</span>
+      <span class="badge badge-type">Article original</span>
+    </div>
+    <div class="authors">Morin PJ, Andreu Arasa VC, Wang Y, Reisman J, Berlowitz D, Hu W, Zhang R, et al. &nbsp;| PMID: 42321302 | <a href="https://doi.org/10.1038/s41598-026-58486-y" target="_blank">DOI</a></div>
+    <div class="section-label">Résultats</div>
+    <div class="section-text">Cette étude administrative portant sur 747 475 patients du système de santé VA (Veterans Affairs), appariés 1:1 avec des témoins, a évalué l'incidence des hémorragies intracérébrales (HIC) chez des patients de 50 ans ou plus avec trouble cognitif léger (MCI) ou maladie d'Alzheimer (MA). Le taux global d'HIC ajusté était de 0,84/1000 personnes-années, significativement plus élevé dans le groupe MCI/MA (1,05) que chez les témoins (0,68). L'HIC liée à l'angiopathie amyloïde cérébrale (CAA) était 63 % plus fréquente dans le groupe MCI/MA (IRR 1,63 ; p &lt; 0,001), et l'HIC liée à l'hypertension montrait un IRR de 1,35 (p &lt; 0,001). L'analyse par cluster hiérarchique a validé les classifications ICD-10-based, confirmant l'association de l'HIC hypertensive avec les maladies cérébrovasculaires, l'hypertension et le diabète. Ces résultats établissent la faisabilité d'utiliser les codes ICD-10 dans les bases médico-administratives pour classifier et étudier épidémiologiquement les HIC de différentes étiologies.</div>
+    <div class="implications-box">
+      <div class="section-label">Implications Medical Affairs</div>
+      <div class="section-text">La surreprésentation significative de l'HIC hypertensive dans la population MA/MCI souligne l'importance d'un contrôle tensionnel optimal chez les patients âgés avec déclin cognitif, notamment pour réduire le risque d'événements hémorragiques cérébraux. Cette base de données VA de plus de 700 000 patients représente un référentiel épidémiologique de premier plan pour les dossiers de vie réelle en support de stratégies antihypertensives chez les populations âgées à haut risque. Les équipes Medical Affairs peuvent utiliser ce cadre méthodologique pour des analyses de bases de données en vie réelle explorant le rôle des antihypertenseurs dans la prévention des HIC dans les populations à risque cognitif.</div>
+    </div>
+  </div>
+
+  <!-- 7. PMID 42321494 -->
+  <div class="article-card">
+    <div class="article-title"><a href="https://pubmed.ncbi.nlm.nih.gov/42321494/" target="_blank">Risk of cardiovascular events and death following retinal arterial occlusion and transient monocular visual loss</a></div>
+    <div class="article-meta">
+      <span class="badge badge-journal">Scientific Reports</span>
+      <span class="badge badge-na">Tier NA</span>
+      <span class="badge badge-date">2026-06-19</span>
+      <span class="badge badge-type">Étude de cohorte</span>
+    </div>
+    <div class="authors">Huemer J, Cortina-Borja M, Khalid H, Chandratheva A, Denniston AK, Rahi JS, Petzold A, Keane PA, Wagner SK &nbsp;| PMID: 42321494 | <a href="https://doi.org/10.1038/s41598-026-58854-8" target="_blank">DOI</a></div>
+    <div class="section-label">Résultats</div>
+    <div class="section-text">Cette étude de cohorte avec appariement par score de propension a inclus 566 patients d'un hôpital ophtalmologique académique londonien (Moorfields Eye Hospital) et a relié les diagnostics ophtalmologiques aux données nationales d'événements cardiovasculaires et de mortalité. Les patients ayant présenté une occlusion de l'artère centrale de la rétine (OACR) avaient un risque quasi triplé d'accident vasculaire cérébral ischémique ou d'infarctus du myocarde par rapport aux témoins appariés, contrairement aux patients avec occlusion de branche (OABR) ou perte visuelle monoculaire transitoire (PVMT) qui ne montraient pas ce risque accru. La fibrillation auriculaire a été nouvellement diagnostiquée chez 6 % des patients OACR dans l'année suivant l'événement, signalant un potentiel de détection cardiaque. L'hypertension et le diabète étaient très prévalents dans tous les groupes, confirmant leur rôle de comorbidités fondamentales dans les occlusions artérielles rétiniennes. Ces résultats militent pour une surveillance cardiaque prolongée et une prévention secondaire rigoureuse après OACR, incluant un contrôle tensionnel optimal.</div>
+    <div class="implications-box">
+      <div class="section-label">Implications Medical Affairs</div>
+      <div class="section-text">La triplification du risque cardiovasculaire après OACR positionne cet événement ophtalmologique comme un équivalent d'AIT cardiovasculaire nécessitant une prise en charge préventive secondaire immédiate incluant le traitement antihypertenseur. Ces données renforcent le lien HTN–risque vasculaire oculaire et CV, avec des implications pour les programmes de sensibilisation des ophtalmologues à la gestion des facteurs de risque cardiovasculaires. Les équipes Medical Affairs peuvent collaborer avec les sociétés d'ophtalmologie pour développer des guidelines interdisciplinaires sur la prévention secondaire cardiovasculaire après OACR.</div>
+    </div>
+  </div>
+
+  <!-- 8. PMID 42320824 -->
+  <div class="article-card">
+    <div class="article-title"><a href="https://pubmed.ncbi.nlm.nih.gov/42320824/" target="_blank">Association of circulating biomarkers of glycocalyx injury, sirtuin 1, and NF-κB p65 in individuals with type 2 diabetes and concurrent arterial hypertension</a></div>
+    <div class="article-meta">
+      <span class="badge badge-journal">Microvascular Research</span>
+      <span class="badge badge-na">Tier NA</span>
+      <span class="badge badge-date">2026-06-19</span>
+      <span class="badge badge-type">Article original</span>
+    </div>
+    <div class="authors">Viudes DR, Mateus AR, Silva CA, do Carmo Franco M &nbsp;| PMID: 42320824 | <a href="https://doi.org/10.1016/j.mvr.2026.104982" target="_blank">DOI</a></div>
+    <div class="section-label">Résultats</div>
+    <div class="section-text">Cette étude transversale a évalué 68 individus (44 femmes, 24 hommes, 41–69 ans) répartis entre diabète de type 2 (T2D) isolé (n=31) et T2D avec hypertension artérielle concomitante (n=37) afin d'explorer les biomarqueurs de glycocalyx endothélial et d'inflammation vasculaire. Les individus avec co-existence de T2D et d'hypertension présentaient des niveaux significativement plus élevés d'acide hyaluronique (p=0,013), de syndecan-4 (p=0,028) et de NF-κB p65 (p=0,002), et des niveaux significativement réduits de sirtuin 1 (p=0,007) par rapport aux patients avec T2D seul. Les tailles d'effet étaient modérées pour tous les biomarqueurs (η²p = 0,10–0,14), et les corrélations inter-biomarqueurs étaient cohérentes avec une physiopathologie d'activation inflammatoire et de dysfonction endothéliale amplifiée. Les associations de l'acide hyaluronique avec le syndecan-4 et de la sirtuin 1 avec le NF-κB p65 persistaient après ajustement sur la durée du diabète. Ces résultats caractérisent un profil biologique vasculaire défavorable spécifique à la co-existence T2D + HTA, reflétant une lésion accrue du glycocalyx et une signalisation vasoprotectrice réduite.</div>
+    <div class="implications-box">
+      <div class="section-label">Implications Medical Affairs</div>
+      <div class="section-text">Ce profil biomarqueur de lésion du glycocalyx amplifié dans la co-morbidité T2D+HTA fournit une base pathophysiologique pour le développement de thérapies ciblant simultanément la dysfonction endothéliale, l'inflammation et la vasoprotection. La sirtuin 1, marqueur de vasoprotection réduit dans ce contexte, représente une cible thérapeutique potentielle que les équipes Medical Affairs pourraient intégrer dans des discussions scientifiques autour des mécanismes des antihypertenseurs avec effets pléiotropes. Ces données soulignent l'importance d'une prise en charge intégrée associant contrôle glycémique et tensionnel pour préserver l'intégrité vasculaire, thèse que les équipes peuvent porter dans les symposia cardiométaboliques.</div>
+    </div>
+  </div>
+
+  <!-- 9. PMID 42321115 -->
+  <div class="article-card">
+    <div class="article-title"><a href="https://pubmed.ncbi.nlm.nih.gov/42321115/" target="_blank">Low-dose aspirin in pregnancy: 81 mg vs 162 mg — Is there a role for personalized medicine?</a></div>
+    <div class="article-meta">
+      <span class="badge badge-journal">Seminars in Perinatology</span>
+      <span class="badge badge-na">Tier NA</span>
+      <span class="badge badge-date">2026-06-19</span>
+      <span class="badge badge-type">Revue</span>
+    </div>
+    <div class="authors">Brewton A, Rood KM &nbsp;| PMID: 42321115 | <a href="https://doi.org/10.1016/j.semperi.2026.152268" target="_blank">DOI</a></div>
+    <div class="section-label">Résultats</div>
+    <div class="section-text">Cette revue narrative synthétise les preuves biologiques, cliniques et d'implémentation autour du dosage optimal de l'aspirine en prévention de la prééclampsie, dans le contexte d'une pratique américaine standardisée à 81 mg/jour face à une tendance internationale vers 150–162 mg. Les mécanismes d'action de l'aspirine dépassent l'inhibition plaquettaire pour inclure des effets anti-inflammatoires et pro-angiogéniques pertinents dans la physiopathologie de la prééclampsie. La réponse à l'aspirine varie selon des facteurs individuels incluant l'obésité, les grossesses multiples, l'hypertension chronique, les antécédents de prééclampsie sévère et la variabilité biologique du renouvellement plaquettaire. Les essais randomisés et méta-analyses disponibles montrent un signal constant d'efficacité supérieure avec des doses plus élevées dans les populations à haut risque sans augmentation claire d'événements indésirables sévères. Des modèles de dépistage basés sur des biomarqueurs et des stratégies d'implémentation soutenues par les dossiers médicaux électroniques pourraient permettre une prophylaxie individualisée.</div>
+    <div class="implications-box">
+      <div class="section-label">Implications Medical Affairs</div>
+      <div class="section-text">L'hypertension chronique figure parmi les facteurs identifiés comme modulateurs de la réponse à l'aspirine dans la prévention de la prééclampsie, ce qui positionne la prise en charge antihypertensive en amont de la grossesse comme levier de médecine préventive. Le débat 81 mg vs 162 mg, combiné à l'approche de médecine personnalisée, représente une opportunité d'engagement scientifique avec les équipes de périnatalité sur la stratification du risque hypertensif en grossesse. Les équipes Medical Affairs des traitements de l'hypertension gravidique doivent anticiper des changements de guidelines et positionner leurs données de sécurité maternelle et fœtale en contexte de polythérapie avec l'aspirine.</div>
+    </div>
+  </div>
+
+  <!-- 10. PMID 42321131 -->
+  <div class="article-card">
+    <div class="article-title"><a href="https://pubmed.ncbi.nlm.nih.gov/42321131/" target="_blank">Depressive symptoms in older patients undergoing electrical cardioversion of persistent atrial fibrillation: a possible association with clinical complexity, physical performance and inflammation</a></div>
+    <div class="article-meta">
+      <span class="badge badge-journal">European Journal of Internal Medicine</span>
+      <span class="badge badge-na">Tier NA</span>
+      <span class="badge badge-date">2026-06-19</span>
+      <span class="badge badge-type">Article original</span>
+    </div>
+    <div class="authors">Fumagalli S, Biagioli M, Niccolini M, Tariello A, Berni E, Davino D, et al. &nbsp;| PMID: 42321131 | <a href="https://doi.org/10.1016/j.ejim.2026.107023" target="_blank">DOI</a></div>
+    <div class="section-label">Résultats</div>
+    <div class="section-text">Cette étude prospective a inclus 258 patients consécutifs (78 ± 8 ans, 41,1 % de femmes) soumis à cardioversion électrique d'une FA persistante et évalués par une Évaluation Gériatrique Complète (CGA). L'hypertension était très prévalente (81,8 %), reflétant la comorbidité habituelle de cette population âgée avec FA. En analyse multivariée, les symptômes dépressifs (GDS) étaient directement associés au score CHADS-VA (p = 0,019, complexité cardiaque) et inversement à la performance physique SPPB (p &lt; 0,001), indépendamment des autres facteurs. Lorsque les données d'IL-6 étaient disponibles (59,3 % des patients), l'inflammation chronique évaluée par ce cytokine remplaçait la complexité cardiovasculaire dans l'association avec la dépression (p = 0,011) tout en maintenant le lien avec la performance physique (p &lt; 0,001). Ces résultats confirment que la FA chez le sujet âgé est un marqueur de vieillissement cardiovasculaire et de fragilité, avec un continuum pathologique liant hypertension, inflammation, déconditionnement physique et dépression.</div>
+    <div class="implications-box">
+      <div class="section-label">Implications Medical Affairs</div>
+      <div class="section-text">La très haute prévalence de l'hypertension (81,8 %) dans cette cohorte FA âgée rappelle que la FA est souvent une complication tardive de l'HTA mal contrôlée, renforçant le message préventif d'un traitement antihypertenseur précoce et durable. Le lien IL-6–dépression dans la FA ouvre des pistes sur le rôle de l'inflammation vasculaire – amplifiée par l'HTA – dans la dégradation des résultats psycho-gériatriques, avec implications pour l'évaluation holistique des patients. Les équipes Medical Affairs peuvent promouvoir des approches intégrées HTN + FA dans les congrès gériatriques, soulignant le continuum pathologique hypertension → FA → fragilité → dépression.</div>
+    </div>
+  </div>
+
+  <!-- 11. PMID 42321588 -->
+  <div class="article-card">
+    <div class="article-title"><a href="https://pubmed.ncbi.nlm.nih.gov/42321588/" target="_blank">Focus on renal morphology, chronic kidney disease, and urinary system malignancies in acromegaly: report on data collected over a 40-year period</a></div>
+    <div class="article-meta">
+      <span class="badge badge-journal">Pituitary</span>
+      <span class="badge badge-na">Tier NA</span>
+      <span class="badge badge-date">2026-06-19</span>
+      <span class="badge badge-type">Article original</span>
+    </div>
+    <div class="authors">Ercan P, Firlatan Yazgan B, Sendur SN, Oguz SH, Dagdelen S, Erbas T &nbsp;| PMID: 42321588 | <a href="https://doi.org/10.1007/s11102-026-01712-7" target="_blank">DOI</a></div>
+    <div class="section-label">Résultats</div>
+    <div class="section-text">Cette étude rétrospective sur 40 ans a évalué 394 patients atteints d'acromégalie suivis dans un centre tertiaire d'Ankara, Turquie, avec analyse des atteintes rénales morphologiques, de la MRC et des cancers urinaires. L'hypertension était un prédicteur indépendant de MRC dans cette population, aux côtés de l'âge, du sexe masculin et de la lithiase rénale. Les kystes rénaux étaient présents chez 41,0 % des patients imagés, la MRC chez 16,1 % et la lithiase chez 15,1 %, avec une prévalence standardisée de MRC plus basse qu'attendue (SPR 0,67 ; p = 0,002) mais une prévalence de kystes supérieure (SPR 1,23–1,98). Les indicateurs cross-sectionnels et cumulatifs de GH/IGF-1 ne prédisaient pas la MRC, tandis que l'IGF-1 cumulatif était positivement associé à l'eGFR de suivi, cohérent avec un mécanisme de hyperfiltration. L'excès de cancers urinaires était marqué (SIR 7,38 ; IC 95 % 2,97–15,20 ; p &lt; 0,001), justifiant une surveillance rénale dédiée dans le suivi à long terme.</div>
+    <div class="implications-box">
+      <div class="section-label">Implications Medical Affairs</div>
+      <div class="section-text">L'identification de l'hypertension comme prédicteur indépendant de MRC dans l'acromégalie renforce le message de contrôle tensionnel rigoureux dans cette population endocrinologique spécifique, souvent multi-comorbide. Les équipes Medical Affairs des médicaments contre l'acromégalie et ceux protecteurs du rein peuvent s'appuyer sur ces données pour développer des approches interdisciplinaires endocrinologie-néphrologie. Cette cohorte de 40 ans offre une opportunité de publication de données de suivi à long terme illustrant l'impact de l'hypertension sur le pronostic rénal dans les maladies endocrines rares.</div>
+    </div>
+  </div>
+
+  <!-- 12. PMID 42320566 -->
+  <div class="article-card">
+    <div class="article-title"><a href="https://pubmed.ncbi.nlm.nih.gov/42320566/" target="_blank">Nutritional status, mortality and kidney disease progression in older patients with advanced chronic kidney disease</a></div>
+    <div class="article-meta">
+      <span class="badge badge-journal">Clinical Nutrition ESPEN</span>
+      <span class="badge badge-na">Tier NA</span>
+      <span class="badge badge-date">2026-06-19</span>
+      <span class="badge badge-type">Article original</span>
+    </div>
+    <div class="authors">Demirhan I, Veltman L, Oevelen MV, Mooijaart SP, Verhaar MC, Bos WJW, Adema AY, Visser WJ, van Buren M, Abrahams AC, et al. &nbsp;| PMID: 42320566 | <a href="https://doi.org/10.1016/j.clnesp.2026.103400" target="_blank">DOI</a></div>
+    <div class="section-label">Résultats</div>
+    <div class="section-text">L'étude prospective observationnelle DIALOGICA a inclus 610 patients ≥ 65 ans avec MRC avancée (eGFR 10–20 mL/min/1,73 m²) en Pays-Bas, dont 26,2 % présentaient un risque de dénutrition (MNA-SF ≤ 11). La dénutrition était associée à un risque significativement accru de mortalité à 1 an (HR ajusté 1,88 ; IC 95 % 1,08–3,25) sans différence significative pour la progression de la MRC (HR ajusté 1,06 ; IC 95 % 0,71–1,59). L'étude émanait du département Néphrology and Hypertension de l'UMC Utrecht, et l'hypertension était une comorbidité prédominante dans cette population. La distinction entre impact sur la mortalité et non-impact sur la progression de la MRC est cliniquement importante pour prioriser les interventions nutritionnelles chez ces patients fragiles. Ces résultats positionnent le dépistage nutritionnel comme outil de stratification du risque de mortalité précoce distinct du risque de progression rénale en MRC avancée.</div>
+    <div class="implications-box">
+      <div class="section-label">Implications Medical Affairs</div>
+      <div class="section-text">La dénutrition comme facteur de risque de mortalité indépendant de la progression rénale identifie une population vulnérable de patients hypertendus avec MRC avancée nécessitant une approche nutritionnelle et cardiométabolique intégrée. Ces données renforcent le modèle de soins multidisciplinaires en pré-dialyse associant néphrologues, diététiciens et équipes cardiovasculaires, avec un rôle potentiel pour les thérapies néphroprotectrices. Les équipes Medical Affairs peuvent utiliser ces données pour soutenir des programmes d'évaluation globale du risque dans les populations MRC, au-delà des seuls indicateurs tensionnels et de filtration.</div>
+    </div>
+  </div>
+
+  <!-- 13. PMID 42320613 -->
+  <div class="article-card">
+    <div class="article-title"><a href="https://pubmed.ncbi.nlm.nih.gov/42320613/" target="_blank">Retinal Microvascular Signatures as Early Predictors of Cardiovascular Risk: Integrating Pathophysiology, Molecular Insights, and Artificial Intelligence</a></div>
+    <div class="article-meta">
+      <span class="badge badge-journal">The American Journal of Cardiology</span>
+      <span class="badge badge-na">Tier NA</span>
+      <span class="badge badge-date">2026-06-19</span>
+      <span class="badge badge-type">Revue</span>
+    </div>
+    <div class="authors">Bc A, Rao SN, M M, V VA &nbsp;| PMID: 42320613 | <a href="https://doi.org/10.1016/j.amjcard.2026.05.035" target="_blank">DOI</a></div>
+    <div class="section-label">Résultats</div>
+    <div class="section-text">Cette revue narrative explore le potentiel de la microvasculature rétinienne comme fenêtre non invasive sur la santé vasculaire systémique, en soulignant ses similitudes structurelles et physiologiques avec les circulations coronarienne et cérébrale. Les modifications microvasculaires rétiniennes – variations du calibre vasculaire, de la tortuosité, des patterns de ramification et de perfusion – sont associées à l'hypertension, au diabète, à l'AVC, à la maladie coronarienne et à l'insuffisance cardiaque. Des voies moléculaires partagées de dysfonction endothéliale, d'inflammation, de stress oxydatif et d'activation du système rénine-angiotensine sous-tendent le remodelage vasculaire rétinien et la pathologie cardiovasculaire. L'intelligence artificielle (IA) et le deep learning ont transformé l'imagerie rétinienne en permettant l'extraction automatisée de features vasculaires haute dimension et la prédiction du risque cardiovasculaire à partir de photographies rétiniennes standard. Le phénotypage microvascular rétinien assisté par IA est présenté comme un outil scalable et non invasif pour la stratification du risque cardiovasculaire en médecine de précision.</div>
+    <div class="implications-box">
+      <div class="section-label">Implications Medical Affairs</div>
+      <div class="section-text">L'hypertension artérielle étant l'une des causes principales de remodelage vasculaire rétinien, l'imagerie rétinienne IA représente une opportunité de biomarquage précoce de l'atteinte organique cible, avec des implications pour les études de phase III évaluant la protection vasculaire. Les équipes Medical Affairs peuvent collaborer avec des partenaires technologiques en diagnostic IA pour intégrer ce biomarqueur rétinien dans des études d'efficacité sur les antihypertenseurs à propriétés vasculoprotectrices. Cette approche non invasive et scalable offre des perspectives pour des programmes de santé publique cardiovasculaire dans les pays à faibles ressources où l'accès à l'imagerie cardiaque avancée est limité.</div>
+    </div>
+  </div>
+
+  <!-- 14. PMID 42321110 -->
+  <div class="article-card">
+    <div class="article-title"><a href="https://pubmed.ncbi.nlm.nih.gov/42321110/" target="_blank">BMI and Early Morphological Fibrosis Biomarkers are Important Predictive Factors for Long-Term Kidney Graft Outcome</a></div>
+    <div class="article-meta">
+      <span class="badge badge-journal">Transplantation Proceedings</span>
+      <span class="badge badge-na">Tier NA</span>
+      <span class="badge badge-date">2026-06-19</span>
+      <span class="badge badge-type">Article original</span>
+    </div>
+    <div class="authors">Järv L, Riispere Ž, Kuudeberg A, Lember M, Ots-Rosenberg M &nbsp;| PMID: 42321110 | <a href="https://doi.org/10.1016/j.transproceed.2026.06.002" target="_blank">DOI</a></div>
+    <div class="section-label">Résultats</div>
+    <div class="section-text">Cette étude rétrospective portant sur 124 patients transplantés rénaux (KT) avec biopsies sériées (0 ou 3 mois, et 1 an) a évalué les prédicteurs du devenir du greffon à 10 ans. Le nombre de médicaments antihypertenseurs à 1 an s'avérait un prédicteur puissant du devenir à long terme du greffon (HR = 3,92 ; p &lt; 0,05), reflétant le rôle de la charge hypertensive post-transplantation sur la survie du greffon. Le BMI à 3 mois (HR = 1,69 ; p &lt; 0,05) et le collagène de type 3 (Col 3) intrabiopique (HR = 12,62 ; p &lt; 0,05) ainsi que l'âge du donneur (HR = 0,9 ; p &lt; 0,05) étaient les autres facteurs déterminants. La survie des patients à 10 ans était influencée par le BMI à 1 an (HR = 2,53) et l'accumulation de Col 3 (HR = 91,26), faisant de ce biomarqueur morphologique un remarquable prédicteur pronostique. Ces résultats positionnent le contrôle du BMI et l'optimisation de la gestion antihypertensive dans la première année post-KT comme leviers cruciaux pour la préservation du greffon.</div>
+    <div class="implications-box">
+      <div class="section-label">Implications Medical Affairs</div>
+      <div class="section-text">La forte valeur prédictive du nombre de médicaments antihypertenseurs à 1 an sur la survie du greffon rénal souligne la nécessité d'une gestion tensionnelle agressive et précoce après transplantation, avec implications pour les IECA, ARA II et autres agents néphroprotecteurs. Ces données représentent un argument supplémentaire pour des études d'intervention ciblant l'optimisation tensionnelle dans la première année post-greffe, avec le Col 3 biopique comme biomarqueur de suivi morphologique. Les équipes Medical Affairs en transplantation rénale peuvent utiliser ces résultats pour promouvoir des protocoles de contrôle tensionnel intégré dès les premiers mois post-KT.</div>
+    </div>
+  </div>
+
+  <!-- 15. PMID 42320261 -->
+  <div class="article-card">
+    <div class="article-title"><a href="https://pubmed.ncbi.nlm.nih.gov/42320261/" target="_blank">The Impact of Dental Prostheses in Patients With Cardiovascular Disease: A Scoping Review With Exploratory Analysis</a></div>
+    <div class="article-meta">
+      <span class="badge badge-journal">International Dental Journal</span>
+      <span class="badge badge-na">Tier NA</span>
+      <span class="badge badge-date">2026-06-19</span>
+      <span class="badge badge-type">Revue systématique</span>
+    </div>
+    <div class="authors">Werdiningsih M, Weng EC, Hasegawa Y, Maria MTS, Hori K, Nagasawa Y, Shinmura K &nbsp;| PMID: 42320261 | <a href="https://doi.org/10.1016/j.identj.2026.109691" target="_blank">DOI</a></div>
+    <div class="section-label">Résultats</div>
+    <div class="section-text">Cette scoping review suivant les lignes directrices PRISMA-ScR a synthétisé 7 études éligibles sur l'association entre prothèses dentaires, hypertension et fonction physique chez des adultes avec maladie cardiovasculaire établie ou risque cardiovasculaire élevé. L'analyse poolée exploratoire basée sur des données non ajustées a montré que les individus porteurs de prothèses dentaires avaient des odds d'hypertension inférieurs (OR = 0,69 ; IC 95 % 0,52–0,91), bien qu'avec une hétérogénéité substantielle (I² = 95 %) et un risque élevé de confusion résiduelle. Des preuves limitées suggèrent que le port de prothèses dentaires peut aider à préserver la mobilité et atténuer la fragilité chez les patients avec MCV. Les différences dans les définitions de fragilité et le faible contrôle des facteurs confondants réduisent la comparabilité et nécessitent des interprétations très prudentes. Ces résultats exploratoires et générateurs d'hypothèses soulignent la nécessité d'études longitudinales bien conçues pour clarifier les mécanismes potentiels liant réhabilitation prothétique orale et santé cardiovasculaire systémique.</div>
+    <div class="implications-box">
+      <div class="section-label">Implications Medical Affairs</div>
+      <div class="section-text">Bien que très exploratoires, ces données ouvrent une piste sur les interactions entre santé bucco-dentaire, nutrition, fragilité et contrôle tensionnel dans les populations cardiovasculaires âgées, un domaine de recherche translationnelle émergent. Les équipes Medical Affairs peuvent signaler cet article comme illustratif de la complexité des déterminants de l'hypertension dans les populations vieillissantes à comorbidités multiples. La faiblesse méthodologique de cette revue (faible nombre d'études, hétérogénéité majeure, estimations non ajustées) doit être mentionnée dans tout usage de ces données pour maintenir la rigueur scientifique du positionnement.</div>
+    </div>
+  </div>
+
+  <!-- 16. PMID 42321645 -->
+  <div class="article-card">
+    <div class="article-title"><a href="https://pubmed.ncbi.nlm.nih.gov/42321645/" target="_blank">Factors associated with late HIV diagnosis among adults living with HIV in Oman: a 32-year ambidirectional cohort study</a></div>
+    <div class="article-meta">
+      <span class="badge badge-journal">BMC Infectious Diseases</span>
+      <span class="badge badge-na">Tier NA</span>
+      <span class="badge badge-date">2026-06-19</span>
+      <span class="badge badge-type">Étude de cohorte</span>
+    </div>
+    <div class="authors">Al-Zadjali ZM, Khamis F, Jaju S, Al Sabei SD, Aimaq R, Al-Naamani J, et al. &nbsp;| PMID: 42321645 | <a href="https://doi.org/10.1186/s12879-026-13845-y" target="_blank">DOI</a></div>
+    <div class="section-label">Résultats</div>
+    <div class="section-text">Cette cohorte ambidirectionnelle de 32 ans (1992–2024) a inclus 549 patients VIH positifs au Royal Hospital d'Oman, dont 30,1 % ont été diagnostiqués tardivement (CD4 ≤ 350 cellules/mm³). L'hypertension était un prédicteur significatif de diagnostic tardif (aRR 3,34 ; IC 95 % 1,13–9,91), aux côtés du jeune âge, d'une anémie sévère (aRR 3,03) et d'une maladie cardiaque préexistante (aRR 5,38). Ces associations suggèrent que les individus hypertendus accèdent plus tardivement aux systèmes de dépistage VIH, peut-être en raison d'une sur-attribution de symptômes VIH à leur comorbidité cardiovasculaire. La majorité des patients diagnostiqués tardivement (64,8 %) étaient asymptomatiques à la présentation, illustrant la difficulté du diagnostic en l'absence de manifestations cliniques. Ces résultats identifient l'hypertension comme une occasion manquée de dépistage VIH lors des consultations de suivi cardiovasculaire.</div>
+    <div class="implications-box">
+      <div class="section-label">Implications Medical Affairs</div>
+      <div class="section-text">Bien que ce travail soit centré sur le VIH, il illustre le rôle des comorbidités cardiovasculaires comme écran au diagnostic d'infections sous-jacentes, avec des implications pour les soignants gérant des patients hypertendus dans des régions à prévalence VIH non négligeable. Les équipes Medical Affairs peuvent noter que les consultations de suivi hypertensif constituent des points de contact opportunistes pour d'autres screenings de santé, renforçant le modèle de soins intégrés multimorbidités. Ce travail omanais s'inscrit dans le contexte de la surveillance épidémiologique du Golfe, une région d'intérêt croissant pour les affaires médicales dans les maladies cardiovasculaires et infectieuses.</div>
+    </div>
+  </div>
+
+  <!-- 17. PMID 42321690 -->
+  <div class="article-card">
+    <div class="article-title"><a href="https://pubmed.ncbi.nlm.nih.gov/42321690/" target="_blank">Healthcare interventions to improve health outcomes for racially/ethnically minoritised people with multiple long-term conditions: a systematic review and narrative synthesis</a></div>
+    <div class="article-meta">
+      <span class="badge badge-journal">BMC Public Health</span>
+      <span class="badge badge-na">Tier NA</span>
+      <span class="badge badge-date">2026-06-19</span>
+      <span class="badge badge-type">Revue systématique</span>
+    </div>
+    <div class="authors">Hayanga B, Joshi M, Hartley K, Oyibo P, Sarwar R, Tariq S, Kashyap M, Bécares L &nbsp;| PMID: 42321690 | <a href="https://doi.org/10.1186/s12889-026-28056-y" target="_blank">DOI</a></div>
+    <div class="section-label">Résultats</div>
+    <div class="section-text">Cette revue systématique a identifié 15 études (sur 6 566 criblées) évaluant des interventions de santé pour des populations racialement ou ethniquement minoritaires avec conditions chroniques multiples (MLTCs) aux États-Unis (n=13), Canada (n=1) et Australie (n=1). L'hypertension et le diabète figuraient parmi les conditions les plus fréquemment ciblées (3 études chacune), souvent co-gérées avec la dépression dans des programmes intégrés. Toutes les interventions intégraient des adaptations socioculturelles, et 5 sur 15 ont obtenu des améliorations statistiquement significatives sur l'ensemble des résultats ciblés, 9 sur 15 ayant amélioré certains résultats. Les acteurs communautaires et les ressources locales étaient systématiquement identifiés comme essentiels aux succès, et les équipes multidisciplinaires à démarche collaborative étaient la modalité d'intervention la plus efficace. Un manque flagrant de données hors Amérique du Nord/Australie et sur les résultats liés aux professionnels de santé limitait la généralisation.</div>
+    <div class="implications-box">
+      <div class="section-label">Implications Medical Affairs</div>
+      <div class="section-text">Cette revue confirme la faisabilité et l'efficacité partielle d'interventions culturellement adaptées pour améliorer le contrôle de l'hypertension dans les minorités ethniques, une population à risque disproportionné d'HTA sévère et de complications. Les équipes Medical Affairs peuvent s'appuyer sur ces données pour développer des programmes d'éducation et de soutien à l'observance ciblant les minorités, en intégrant des médiateurs culturels et des ressources communautaires. L'absence de données hors Amérique du Nord représente une opportunité de recherche en vie réelle sur des marchés émergents où les inégalités ethniques de santé cardiovasculaire sont documentées mais peu étudiées.</div>
+    </div>
+  </div>
+
+  <!-- 18. PMID 42321735 -->
+  <div class="article-card">
+    <div class="article-title"><a href="https://pubmed.ncbi.nlm.nih.gov/42321735/" target="_blank">Self-reported functional and mobility limitations in mid-life: a systematic review of prevalence and association with chronic health conditions</a></div>
+    <div class="article-meta">
+      <span class="badge badge-journal">BMC Public Health</span>
+      <span class="badge badge-na">Tier NA</span>
+      <span class="badge badge-date">2026-06-19</span>
+      <span class="badge badge-type">Revue systématique</span>
+    </div>
+    <div class="authors">Hayek R, Springer S, Brown RT &nbsp;| PMID: 42321735 | <a href="https://doi.org/10.1186/s12889-026-28084-8" target="_blank">DOI</a></div>
+    <div class="section-label">Résultats</div>
+    <div class="section-text">Cette revue systématique (PROSPERO CRD420251038883) a sélectionné 26 études de population incluant plus de 500 000 participants de plus de 30 pays et publiées entre 2000 et 2025, portant sur les limitations fonctionnelles et de mobilité à l'âge moyen. La prévalence des limitations fonctionnelles se situait généralement dans l'intervalle 15–25 %, avec des limitations de mobilité dépassant 40 % dans certains contextes. L'hypertension était associée à ces limitations avec un risque attribuable à la population (PAR) de 3 %, faible comparé à la douleur musculosquelettique (PAR 15–38 %) et à la multimorbidité (PAR 12–56 %). La quasi-totalité des preuves provenait d'études transversales avec hétérogénéité méthodologique importante (instruments de mesure, tranches d'âge «mid-life»), limitant la comparabilité et les inférences causales. Ces données indiquent que l'hypertension contribue modestement mais de façon mesurable aux limitations fonctionnelles à l'âge moyen, justifiant son intégration dans les stratégies de prévention globale du vieillissement fonctionnel.</div>
+    <div class="implications-box">
+      <div class="section-label">Implications Medical Affairs</div>
+      <div class="section-text">Bien que le PAR hypertensif (3 %) soit modeste dans ce contexte, la prévention des limitations fonctionnelles à l'âge moyen représente un angle complémentaire au message cardiovasculaire traditionnel pour promouvoir le contrôle tensionnel précoce auprès d'une population active. Ces données épidémiologiques peuvent alimenter des argumentaires de pharmaco-économie et de qualité de vie liée à la santé (HRQoL) dans les dossiers de remboursement antihypertenseurs. Les équipes Medical Affairs peuvent collaborer avec les médecins de médecine physique et de réadaptation pour développer des recommandations sur le dépistage et le traitement de l'HTA dans le cadre du maintien fonctionnel à l'âge moyen.</div>
+    </div>
+  </div>
+
+  <!-- 19. PMID 42321769 -->
+  <div class="article-card">
+    <div class="article-title"><a href="https://pubmed.ncbi.nlm.nih.gov/42321769/" target="_blank">Management of multiple sequential complications following coronary artery bypass grafting: a case report from Tanzania</a></div>
+    <div class="article-meta">
+      <span class="badge badge-journal">Journal of Cardiothoracic Surgery</span>
+      <span class="badge badge-na">Tier NA</span>
+      <span class="badge badge-date">2026-06-19</span>
+      <span class="badge badge-type">Cas clinique</span>
+    </div>
+    <div class="authors">Hassanali HM, Bhat N, Lunawadawala MA, Dibaba AD, Ntungi AM, Kiwia J, Gebrewahd SH &nbsp;| PMID: 42321769 | <a href="https://doi.org/10.1186/s13019-026-04438-6" target="_blank">DOI</a></div>
+    <div class="section-label">Résultats</div>
+    <div class="section-text">Ce rapport de cas décrit un patient tanzanien de 63 ans avec triple atteinte coronarienne, diabète, hypertension, obésité et asthme ayant subi un pontage aortocoronarien (CABG) et présenté de multiples complications séquentielles majeures. Les complications incluaient une déhiscence sternale traumatique (J6 post-opératoire), une polyneuromyopathie de réanimation (CIPNM), une infection profonde du sternum à Pseudomonas aeruginosa, des troubles du rythme, une insuffisance rénale aiguë et des épanchements pleuraux. Après 8 mois de soins multidisciplinaires intensifs incluant antibiothérapie ciblée, thérapie par pression négative, débridements répétés et reconstruction par lambeau pectoral, le patient a atteint une cicatrisation complète et une récupération fonctionnelle. L'hypertension représentait l'une des comorbidités majeures qui augmentait le risque opératoire et post-opératoire. Ce cas illustre la complexité de la prise en charge chirurgicale cardiovasculaire en Afrique sub-saharienne, avec les défis supplémentaires liés à l'infection, à la réhabilitation et au suivi dans un contexte de ressources limitées.</div>
+    <div class="implications-box">
+      <div class="section-label">Implications Medical Affairs</div>
+      <div class="section-text">Ce cas tanzanien illustre le profil de comorbidité (HTN + diabète + obésité) caractéristique des patients cardiaques dans les pays à revenus intermédiaires d'Afrique, avec des implications pour les stratégies préventives antihypertensives dans ces marchés émergents. La complexité des complications post-CABG dans ce contexte souligne l'intérêt d'un contrôle optimal des facteurs de risque cardiovasculaires modifiables, notamment la PA, avant les interventions chirurgicales. Les équipes Medical Affairs peuvent utiliser ce type de cas pour plaider pour un accès élargi aux thérapies cardiovasculaires protectrices dans les systèmes de santé à ressources limitées d'Afrique.</div>
+    </div>
+  </div>
+
+  <!-- 20. PMID 42321831 -->
+  <div class="article-card">
+    <div class="article-title"><a href="https://pubmed.ncbi.nlm.nih.gov/42321831/" target="_blank">Inverse association between body mass index and abdominal aortic calcification based on NHANES</a></div>
+    <div class="article-meta">
+      <span class="badge badge-journal">Journal of Cardiothoracic Surgery</span>
+      <span class="badge badge-na">Tier NA</span>
+      <span class="badge badge-date">2026-06-19</span>
+      <span class="badge badge-type">Article original</span>
+    </div>
+    <div class="authors">Wang Y, Meng J, Wang L, Zhang J &nbsp;| PMID: 42321831 | <a href="https://doi.org/10.1186/s13019-026-04416-y" target="_blank">DOI</a></div>
+    <div class="section-label">Résultats</div>
+    <div class="section-text">Cette analyse des données NHANES 2013–2014 portant sur 3 116 adultes a évalué la relation entre l'IMC et la calcification aortique abdominale sévère (AAC) diagnostiquée par score Kauppila sur absorptiométrie biphotonique (DXA). Après ajustement complet, un IMC plus élevé était significativement associé à des odds inférieurs d'AAC sévère (OR = 0,89 ; IC 95 % 0,81–0,98 ; p = 0,013), et les individus obèses présentaient 62 % moins d'odds d'AAC sévère comparés aux sujets de poids normal (OR = 0,38 ; IC 95 % 0,16–0,94 ; p = 0,037). La relation inverse persistait dans les sous-groupes masculins, âgés, et notamment dans le sous-groupe sans hypertension ni diabète, ce qui est cliniquement informatif pour l'interprétation mécanique. L'analyse par spline cubique restreinte confirmait une tendance non linéaire significative (p pour non-linéarité = 0,0023). Ces résultats contribuent à la littérature sur le «paradoxe de l'obésité» dans le contexte de la calcification vasculaire, soulevant des questions sur les mécanismes protecteurs potentiels de la masse grasse contre la médiacalcose aortique en population générale.</div>
+    <div class="implications-box">
+      <div class="section-label">Implications Medical Affairs</div>
+      <div class="section-text">La persistance de l'association inverse IMC–AAC dans le sous-groupe sans hypertension ni diabète suggère que le «paradoxe de l'obésité» vasculaire est indépendant du statut tensionnel, information utile pour nuancer les messages cardiovasculaires sur corpulence et calcification vasculaire. Ces données issues d'une base épidémiologique robuste (NHANES) peuvent enrichir les discussions sur les déterminants complexes du risque vasculaire au-delà des facteurs de risque traditionnels dont l'HTA. Les équipes Medical Affairs doivent mentionner les limites transversales et les biais de confusion résiduels potentiels avant d'intégrer ces résultats dans tout argumentaire thérapeutique.</div>
+    </div>
+  </div>
+
+  <!-- 21. PMID 42321950 -->
+  <div class="article-card">
+    <div class="article-title"><a href="https://pubmed.ncbi.nlm.nih.gov/42321950/" target="_blank">Temporal trends and forecasted mortality involving lung cancer with co-listed hypertension in U.S. adults, 2000–2035</a></div>
+    <div class="article-meta">
+      <span class="badge badge-journal">Cardio-Oncology</span>
+      <span class="badge badge-na">Tier NA</span>
+      <span class="badge badge-date">2026-06-20</span>
+      <span class="badge badge-type">Article original</span>
+    </div>
+    <div class="authors">Fatima SS, Naz A, Fareed M, Hussain M, Arsheen F, Khalid N, et al. &nbsp;| PMID: 42321950 | <a href="https://doi.org/10.1186/s40959-026-00524-9" target="_blank">DOI</a></div>
+    <div class="section-label">Résultats — PMID 42321950</div>
+    <div class="section-text">Cette analyse rétrospective de la base CDC WONDER portant sur 305 878 décès par cancer du poumon avec hypertension co-listée chez des adultes américains âgés de 25 ans ou plus (2000–2025) a montré une augmentation significative du taux de mortalité ajusté à l'âge (AAMR), passant de 3,55 à 6,00 (AAPC +2,038 ; p &lt; 0,0001). Les hommes avaient un AAMR moyen plus élevé (6,16) que les femmes (4,07), et les adultes noirs non hispaniques présentaient la mortalité la plus élevée (AAMR moyen 7,38). Géographiquement, le Sud présentait le fardeau le plus élevé (AAMR moyen 5,67) et les régions non métropolitaines dépassaient les zones métropolitaines (5,73 vs 4,5). La majorité des décès (42,16 %) survenaient au domicile du défunt. Les modèles Auto-ARIMA et Prophet projettent un maintien de ce fardeau à un niveau élevé jusqu'en 2035, notamment chez les hommes, les blancs non hispaniques et dans la région Sud, avec une incertitude substantielle dans les projections.</div>
+    <div class="implications-box">
+      <div class="section-label">Implications Medical Affairs</div>
+      <div class="section-text">La croissance significative de la mortalité associant cancer du poumon et hypertension souligne la nécessité d'une gestion cardiovasculaire rigoureuse dans le contexte onco-cardiologique, avec des implications pour les traitements antihypertenseurs chez les patients atteints de cancer. Ces disparités raciales et géographiques interpellent les équipes Medical Affairs sur l'équité d'accès aux thérapies cardiovasculaires et oncologiques dans les populations vulnérables. Les prévisions jusqu'en 2035 constituent un argument de santé publique fort pour développer des programmes intégrés de prévention cardiovasculaire dans la prise en charge des cancers, incluant le dépistage et le traitement de l'HTA dès le diagnostic oncologique.</div>
+    </div>
+  </div>
+
+  <!-- 22. PMID 42322101 -->
+  <div class="article-card">
+    <div class="article-title"><a href="https://pubmed.ncbi.nlm.nih.gov/42322101/" target="_blank">Comment on: 'Health literacy and its role in promoting medication adherence among hypertension patients'</a></div>
+    <div class="article-meta">
+      <span class="badge badge-journal">Blood Pressure</span>
+      <span class="badge badge-tier3">Tier 3</span>
+      <span class="badge badge-date">2026-06-20</span>
+      <span class="badge badge-type">Correspondance</span>
+    </div>
+    <div class="authors">Zakariyah MF, Nugroho R, Alisyahbana IB &nbsp;| PMID: 42322101 | <a href="https://doi.org/10.1080/08037051.2026.2692815" target="_blank">DOI</a></div>
+    <div class="section-label">Résultats — PMID 42322101</div>
+    <div class="section-text">Cette lettre publiée dans Blood Pressure (journal Tier 3 spécialisé en hypertension) commente un article original sur la littératie en santé et son rôle dans l'observance médicamenteuse chez les patients hypertendus. La littératie en santé est un déterminant majeur de l'adhérence thérapeutique dans l'hypertension, condition où la non-observance représente l'une des causes principales d'HTA mal contrôlée à l'échelle populationnelle. La correspondance contribue au débat scientifique en cours sur les méthodes et résultats de l'article commenté, dans un contexte de prise de conscience croissante du rôle des compétences en santé dans les résultats cliniques. L'absence de résumé structuré limite l'analyse de l'argument spécifique développé, mais la publication dans Blood Pressure assure une visibilité auprès des spécialistes en hypertension. L'intérêt continu pour ce sujet reflète l'enjeu persistant de l'observance dans la prise en charge de l'HTA au niveau mondial.</div>
+    <div class="implications-box">
+      <div class="section-label">Implications Medical Affairs</div>
+      <div class="section-text">La littératie en santé est un levier modifiable pour améliorer l'observance aux antihypertenseurs, avec des implications directes pour les programmes d'éducation thérapeutique que les équipes Medical Affairs peuvent développer avec les professionnels de santé. L'intérêt continu pour ce sujet dans Blood Pressure (Tier 3) confirme la pertinence des outils pédagogiques adaptés au niveau de compréhension des patients dans la gestion à long terme de l'HTA. Les équipes Medical Affairs peuvent collaborer avec des experts en sciences de l'éducation pour co-développer des supports d'information patients sur les traitements antihypertenseurs, validés sur leur lisibilité et leur impact sur l'observance.</div>
+    </div>
+  </div>
+
+  <!-- 23. PMID 42322187 -->
+  <div class="article-card">
+    <div class="article-title"><a href="https://pubmed.ncbi.nlm.nih.gov/42322187/" target="_blank">Predictors of Unplanned Admission After Outpatient Rhytidectomy</a></div>
+    <div class="article-meta">
+      <span class="badge badge-journal">Aesthetic Surgery Journal</span>
+      <span class="badge badge-na">Tier NA</span>
+      <span class="badge badge-date">2026-06-20</span>
+      <span class="badge badge-type">Article original</span>
+    </div>
+    <div class="authors">Alnemri A, Garg N, Michlin D, Wride W, Xu V, Palmer WJ, et al. &nbsp;| PMID: 42322187 | <a href="https://doi.org/10.1093/asj/sjag118" target="_blank">DOI</a></div>
+    <div class="section-label">Résultats — PMID 42322187</div>
+    <div class="section-text">Cette étude rétrospective portant sur 129 patients programmés pour rhytidectomie ambulatoire entre juin 2022 et juillet 2025 dans un centre tertiaire américain (Thomas Jefferson University Hospital) a identifié les prédicteurs d'hospitalisation non planifiée (21 patients, 16,3 %). L'hypertension était significativement associée aux hospitalisations non planifiées (p = 0,016), avec d'autres facteurs incluant la durée d'anesthésie prolongée (574,6 vs 485,7 min ; p = 0,001), le nombre élevé de procédures simultanées (4,3 vs 3,3 ; p = 0,002), l'obésité (p = 0,024) et une classe ASA plus élevée (p = 0,048). Parmi les agents anesthésiques, la dexmédétomidine et l'hydromorphone étaient associées à l'hospitalisation non planifiée, tandis que le rémifentanil était associé à la sortie le jour même. Ces données permettent de construire un profil de risque préopératoire pour identifier les patients nécessitant une surveillance post-opératoire renforcée après chirurgie esthétique faciale. L'hypertension s'ajoute ainsi à la liste des comorbidités augmentant les risques péri-opératoires même dans des chirurgies électives à faible risque apparent, justifiant un contrôle tensionnel préopératoire optimal.</div>
+    <div class="implications-box">
+      <div class="section-label">Implications Medical Affairs</div>
+      <div class="section-text">La contribution de l'hypertension aux hospitalisations non planifiées en chirurgie esthétique ambulatoire rappelle que l'HTA reste une comorbidité à risque opératoire dans tous les contextes chirurgicaux, renforçant l'importance d'un contrôle tensionnel préopératoire rigoureux. Ces données peuvent être utilisées dans des communications médicales ciblant les anesthésistes et les chirurgiens pour sensibiliser à l'évaluation et au contrôle de l'HTA avant toute chirurgie ambulatoire élective. Les équipes Medical Affairs peuvent collaborer avec des sociétés de chirurgie ambulatoire pour développer des recommandations sur la gestion périopératoire de l'HTA, valorisant l'apport d'un traitement antihypertenseur optimisé avant l'intervention.</div>
+    </div>
+  </div>
+
+  <!-- 24. PMID 42320807 -->
+  <div class="article-card">
+    <div class="article-title"><a href="https://pubmed.ncbi.nlm.nih.gov/42320807/" target="_blank">Is Reduced Right Ventricular Power After Sotatercept Beneficial?</a></div>
+    <div class="article-meta">
+      <span class="badge badge-journal">Journal of Heart and Lung Transplantation</span>
+      <span class="badge badge-na">Tier NA</span>
+      <span class="badge badge-date">2026-06-19</span>
+      <span class="badge badge-type">Correspondance</span>
+    </div>
+    <div class="authors">Genecand L, Boucly A, Sitbon O, Chemla D, Montani D &nbsp;| PMID: 42320807 | <a href="https://doi.org/10.1016/j.healun.2026.06.010" target="_blank">DOI</a></div>
+    <div class="section-label">Résultats — PMID 42320807</div>
+    <div class="section-text">Cette correspondance publiée dans le Journal of Heart and Lung Transplantation, émanant des équipes spécialisées en hypertension pulmonaire de l'Hôpital Bicêtre (Paris-Saclay/AP-HP/INSERM UMR_S 1358), interroge les implications de la réduction de la puissance ventriculaire droite observée après traitement par sotatercept dans l'hypertension pulmonaire artérielle (HPA). Le sotatercept, activateur du récepteur de l'activine de type IIB récemment approuvé dans l'HPA, fait l'objet d'une analyse critique de ses effets hémodynamiques sur le couplage ventriculo-artériel pulmonaire. Les auteurs, dont le Pr David Montani, référence mondiale en HPA, posent la question de savoir si la réduction de la puissance ventriculaire droite constitue réellement un bénéfice thérapeutique ou un marqueur de désadaptation ventriculaire. Cette correspondance illustre le débat scientifique actif sur l'interprétation des effets hémodynamiques des nouvelles thérapies biologiques dans l'HPA. L'absence de résumé structuré reflète le format lettre, mais le journal (J Heart Lung Transplant) est une référence de premier plan en transplantation et insuffisance cardiaque avancée.</div>
+    <div class="implications-box">
+      <div class="section-label">Implications Medical Affairs</div>
+      <div class="section-text">Le débat Bicêtre sur les effets du sotatercept sur la puissance ventriculaire droite illustre l'importance d'une évaluation hémodynamique fine et multidimensionnelle dans les essais cliniques en HPA, avec des implications pour les dossiers de soumission réglementaire et les messages d'efficacité hémodynamique. Les équipes Medical Affairs en HPA doivent intégrer les questions de couplage ventriculo-artériel pulmonaire dans leurs advisory boards pour anticiper les interrogations des cardiologues spécialisés et formuler des réponses scientifiques rigoureuses. Ce type d'échange de haut niveau dans une revue de référence souligne la nécessité d'une veille scientifique pointue et d'un engagement proactif avec les KOLs européens en hypertension pulmonaire.</div>
+    </div>
+  </div>
+
+  <!-- 25. PMID 42321569 -->
+  <div class="article-card">
+    <div class="article-title"><a href="https://pubmed.ncbi.nlm.nih.gov/42321569/" target="_blank">Selective Coil Embolization of a Distal Segmental Renal Artery Lesion Causing Renovascular Hypertension</a></div>
+    <div class="article-meta">
+      <span class="badge badge-journal">Cardiovascular and Interventional Radiology</span>
+      <span class="badge badge-na">Tier NA</span>
+      <span class="badge badge-date">2026-06-19</span>
+      <span class="badge badge-type">Correspondance</span>
+    </div>
+    <div class="authors">Jørgensen JJ, Gervin K, Bachke A, Gudmundsdottir H, Baksaas-Aasen K &nbsp;| PMID: 42321569 | <a href="https://doi.org/10.1007/s00270-026-04500-9" target="_blank">DOI</a></div>
+    <div class="section-label">Résultats — PMID 42321569</div>
+    <div class="section-text">Cette lettre de l'Hôpital Universitaire d'Oslo décrit un cas de traitement par embolisation sélective à spirales (coils) d'une lésion artérielle rénale segmentaire distale responsable d'une hypertension rénovasculaire, cause secondaire d'hypertension potentiellement curable. L'hypertension rénovasculaire représente environ 1–5 % des hypertensions et résulte d'une sténose ou lésion de l'artère rénale entraînant une activation du système rénine-angiotensine. La technique d'embolisation sélective distale préserve la vascularisation du parenchyme rénal sain tout en traitant la cause de l'HTA, offrant une alternative endovasculaire à la chirurgie ou à l'angioplastie dans certaines configurations anatomiques spécifiques. Ce type de cas illustre les possibilités des techniques endovasculaires précises dans la prise en charge des hypertensions secondaires d'origine vasculaire rénale. La publication dans Cardiovascular and Interventional Radiology, référence en radiologie interventionnelle vasculaire, confère une visibilité adéquate à cette approche thérapeutique de niche.</div>
+    <div class="implications-box">
+      <div class="section-label">Implications Medical Affairs</div>
+      <div class="section-text">L'hypertension rénovasculaire traitable par intervention endovasculaire représente un sous-groupe important à identifier pour réduire la charge médicamenteuse et potentiellement guérir l'hypertension secondaire, avec des implications pour le positionnement des antihypertenseurs dans les algorithmes de bilan étiologique. Les équipes Medical Affairs peuvent soutenir des programmes de formation en imagerie vasculaire et radiologie interventionnelle sur le diagnostic et le traitement des hypertensions rénovasculaires, en partenariat avec les équipes de néphrologie et de cardiologie interventionnelle. Ce cas renforce la nécessité d'une exploration étiologique rigoureuse avant d'étiqueter une HTA comme «résistante», ouvrant des voies thérapeutiques interventionnelles dans une fraction ciblée des patients.</div>
+    </div>
+  </div>
+
+</div><!-- end topic 1 -->
+
+<!-- ============================================================ -->
+<!-- TOPIC 2: ACE INHIBITORS / RAAS -->
+<!-- ============================================================ -->
+<div class="topic-section" id="acei">
+  <div class="topic-header">
+    <h2>2. Inhibiteurs de l'ECA et du Système RAAS</h2>
+    <span class="count">1 article</span>
+  </div>
+
+  <!-- PMID 42320577 -->
+  <div class="article-card">
+    <div class="article-title"><a href="https://pubmed.ncbi.nlm.nih.gov/42320577/" target="_blank">To Hold or Not to Hold, That is the Question: Sick Day Medication Guidance as Routine Care</a></div>
+    <div class="article-meta">
+      <span class="badge badge-journal">American Journal of Kidney Diseases</span>
+      <span class="badge badge-na">Tier NA</span>
+      <span class="badge badge-date">2026-06-19</span>
+      <span class="badge badge-type">Perspective</span>
+    </div>
+    <div class="authors">Thavarajah S &nbsp;| PMID: 42320577 | <a href="https://doi.org/10.1053/j.ajkd.2026.01.019" target="_blank">DOI</a></div>
+    <div class="section-label">Résultats — PMID 42320577</div>
+    <div class="section-text">Cette perspective publiée dans l'American Journal of Kidney Diseases aborde la gestion des médicaments en cas de maladie intercurrente (sick day guidance) pour les inhibiteurs du RAAS (IEC/ARA II), les inhibiteurs du SGLT2 et les antagonistes des récepteurs minéralocorticoïdes (ARM), dont l'utilisation combinée croissante augmente le risque d'insuffisance rénale aiguë (IRA) lors de situations de déplétion volémique. Les mêmes mécanismes qui permettent à ces agents de réduire l'hypertension glomérulaire et la pression artérielle limitent la capacité à maintenir la perfusion rénale en cas de déshydratation ou d'hypotension relative. Les obstacles à l'adoption généralisée de protocoles «sick day» incluent : ambiguïté des critères définissant un «sick day», incertitude sur la durée d'interruption et les conditions de reprise, crainte de décourager l'utilisation de ces thérapies protectrices, et absence de données solides sur le bénéfice net de l'arrêt temporaire. L'auteur argumente que la guidance «sick day» constitue un outil précieux pour le counseling patient, réduisant le risque et les coûts associés aux épisodes d'IRA tout en favorisant une utilisation plus cohérente à long terme de ces médicaments essentiels. La perspective propose que ces recommandations, intégrées en routine dans la pratique néphro-hypertensive, peuvent améliorer la sécurité et l'observance à long terme des polythérapies cardio-néphroprotectrices.</div>
+    <div class="implications-box">
+      <div class="section-label">Implications Medical Affairs</div>
+      <div class="section-text">Ce travail met en lumière un enjeu de sécurité critique pour les combinaisons RAAS inhibiteurs + iSGLT2 + ARM de plus en plus utilisées en HTA avec comorbidités rénales et cardiaques, avec un besoin urgent d'outils pratiques de «sick day management» à destination des patients et soignants. Les équipes Medical Affairs des inhibiteurs du RAAS, des iSGLT2 et des ARM doivent développer des matériaux éducatifs validés sur la gestion des maladies intercurrentes, en collaboration avec les sociétés de néphrologie et de cardiologie, pour prévenir l'IRA iatrogène liée à ces polythérapies. L'opportunité de différenciation par la sécurité existe pour les molécules à clearance rénale plus favorable en cas de déhydratation, avec un message spécifique de sécurité en situation de «sick day» que les équipes Medical Affairs peuvent développer avec les KOLs néphrologiques.</div>
+    </div>
+  </div>
+
+</div><!-- end topic 2 -->
+
+<!-- ============================================================ -->
+<!-- TOPIC 3: ARBs -->
+<!-- ============================================================ -->
+<div class="topic-section" id="arb">
+  <div class="topic-header">
+    <h2>3. Antagonistes des Récepteurs de l'Angiotensine II (ARB)</h2>
+    <span class="count">0 articles</span>
+  </div>
+  <div class="empty-topic">Aucun article identifié dans cette fenêtre d'indexation (2026-06-20 → 2026-06-21).</div>
+</div>
+
+<!-- ============================================================ -->
+<!-- TOPIC 4: CALCIUM CHANNEL BLOCKERS -->
+<!-- ============================================================ -->
+<div class="topic-section" id="ccb">
+  <div class="topic-header">
+    <h2>4. Inhibiteurs des Canaux Calciques (CCB)</h2>
+    <span class="count">0 articles</span>
+  </div>
+  <div class="empty-topic">Aucun article identifié dans cette fenêtre d'indexation (2026-06-20 → 2026-06-21).</div>
+</div>
+
+<!-- ============================================================ -->
+<!-- TOPIC 5: DIURETICS & BETA-BLOCKERS -->
+<!-- ============================================================ -->
+<div class="topic-section" id="diur">
+  <div class="topic-header">
+    <h2>5. Diurétiques et Bêta-bloquants</h2>
+    <span class="count">0 articles</span>
+  </div>
+  <div class="empty-topic">Aucun article identifié dans cette fenêtre d'indexation (2026-06-20 → 2026-06-21).</div>
+</div>
+
+<!-- ============================================================ -->
+<!-- TOPIC 6: CLINICAL TRIALS & GUIDELINES -->
+<!-- ============================================================ -->
+<div class="topic-section" id="trial">
+  <div class="topic-header">
+    <h2>6. Essais Cliniques et Recommandations</h2>
+    <span class="count">3 articles</span>
+  </div>
+
+  <!-- PMID 42321661 -->
+  <div class="article-card">
+    <div class="article-title"><a href="https://pubmed.ncbi.nlm.nih.gov/42321661/" target="_blank">Impact of OMEGA-3 fatty acid in patients undergoing hemodialysis: a systematic review and meta-analysis</a></div>
+    <div class="article-meta">
+      <span class="badge badge-journal">BMC Nephrology</span>
+      <span class="badge badge-na">Tier NA</span>
+      <span class="badge badge-date">2026-06-19</span>
+      <span class="badge badge-type">Méta-analyse</span>
+    </div>
+    <div class="authors">Ahmed Jilani HB, Baig BM, Rasool A, Ibrahim M, Khalid A, Rizvi MS, et al. &nbsp;| PMID: 42321661 | <a href="https://doi.org/10.1186/s12882-026-05140-4" target="_blank">DOI</a></div>
+    <div class="section-label">Résultats — PMID 42321661</div>
+    <div class="section-text">Cette méta-analyse systématique a poolé les données d'essais contrôlés randomisés (ECR) comparant la supplémentation en acides gras oméga-3 (n-3 PUFAs) versus placebo chez des patients adultes sous hémodialyse (recherche PubMed, Embase, CENTRAL jusqu'à novembre 2025), avec des analyses de sous-groupes selon le diabète, l'hypertension, l'âge et la durée de suivi. La supplémentation en n-3 PUFAs ne réduisait pas significativement la mortalité toutes causes (RR = 0,93 ; IC 95 % 0,80–1,08 ; p = 0,33), mais réduisait de façon significative la mortalité cardiovasculaire (RR = 0,55 ; IC 95 % 0,42–0,71 ; p &lt; 0,001). Les événements d'accès vasculaire étaient significativement réduits (RR = 0,83 ; IC 95 % 0,73–0,95 ; p = 0,005) et les infarctus du myocarde fatals et non fatals fortement diminués (RR = 0,50 ; IC 95 % 0,36–0,68 ; p &lt; 0,001). Ces résultats positionnent les n-3 PUFAs comme thérapie cardioprotectrice adjuvante significative en hémodialyse, avec l'hypertension comme sous-groupe d'intérêt explicitement analysé. La concentration des preuves dans un seul grand essai impose toutefois une interprétation prudente, et la validation par des ECR supplémentaires de grande envergure est nécessaire.</div>
+    <div class="implications-box">
+      <div class="section-label">Implications Medical Affairs</div>
+      <div class="section-text">La réduction de 45 % de la mortalité cardiovasculaire et de 50 % des infarctus du myocarde par les oméga-3 en hémodialyse représente un effet cardioprotecteur substantiel dans une population à très haut risque cardiovasculaire, souvent hypertensive et diabétique, justifiant un engagement fort de Medical Affairs avec les néphrologues. Ces données peuvent alimenter des discussions cliniques sur l'intégration de la supplémentation en n-3 PUFAs dans les protocoles de soins en hémodialyse, en complément des thérapies antihypertensives existantes. La limitation identifiée – dépendance aux données d'un seul grand essai – constitue un message de prudence important à communiquer aux KOLs en néphrologie avant tout changement de pratique clinique.</div>
+    </div>
+  </div>
+
+  <!-- PMID 42321899 -->
+  <div class="article-card">
+    <div class="article-title"><a href="https://pubmed.ncbi.nlm.nih.gov/42321899/" target="_blank">The effects of oral cannabidiol supplementation on blood pressure in adults: a systematic review of randomised controlled trials</a></div>
+    <div class="article-meta">
+      <span class="badge badge-journal">Journal of Cannabis Research</span>
+      <span class="badge badge-na">Tier NA</span>
+      <span class="badge badge-date">2026-06-19</span>
+      <span class="badge badge-type">Revue systématique</span>
+    </div>
+    <div class="authors">Roberts A, Fountzopoulos S, Desai T &nbsp;| PMID: 42321899 | <a href="https://doi.org/10.1186/s42238-026-00463-3" target="_blank">DOI</a></div>
+    <div class="section-label">Résultats — PMID 42321899</div>
+    <div class="section-text">Cette revue systématique a identifié 4 ECR incluant 120 participants évaluant les effets du cannabidiol (CBD) oral sur la pression artérielle chez des adultes normotendus ou hypertendus, avec des doses variant de 225 à 600 mg/jour et des durées de 2 heures à 5 semaines. Les quatre études ont rapporté des réductions statistiquement significatives de la pression artérielle systolique versus placebo, particulièrement sous stress ou pendant le sommeil, avec une relation dose-réponse observée (effets les plus marqués à 600 mg/jour en administration aiguë). Deux études rapportaient également une réduction de la pression diastolique. Les effets secondaires (nausées, diarrhée, fatigue) étaient légers à modérés, sans événement cardiovasculaire grave signalé, mais les données de sécurité hépatique et pharmacocinétique demeuraient insuffisantes pour une évaluation complète du profil bénéfice-risque. L'hétérogénéité clinique majeure entre études (populations, doses, matrices CBD, conditions de mesure) a rendu impossible la méta-analyse quantitative, limitant la synthèse à une approche narrative.</div>
+    <div class="implications-box">
+      <div class="section-label">Implications Medical Affairs</div>
+      <div class="section-text">Ces données préliminaires sur le CBD et la pression artérielle méritent une surveillance vigilante par les équipes Medical Affairs, notamment en raison du risque de positionnement informel du CBD comme alternative ou complément aux antihypertenseurs par les patients, en particulier dans les pays où le CBD est accessible en vente libre. Les questions de sécurité hépatique, d'interactions médicamenteuses avec les antihypertenseurs conventionnels et d'absence de données pharmacocinétiques doivent être communiquées de manière proactive aux prescripteurs pour orienter leurs conseils aux patients. Ces résultats ne justifient pas encore de recommandations thérapeutiques mais indiquent le besoin d'essais de phase II/III bien conçus, avec un potentiel de collaboration académique pour des équipes Medical Affairs souhaitant se positionner sur ce domaine émergent.</div>
+    </div>
+  </div>
+
+  <!-- PMID 42320575 -->
+  <div class="article-card">
+    <div class="article-title"><a href="https://pubmed.ncbi.nlm.nih.gov/42320575/" target="_blank">Meaningful Engagement of Patients in Research</a></div>
+    <div class="article-meta">
+      <span class="badge badge-journal">American Journal of Kidney Diseases</span>
+      <span class="badge badge-na">Tier NA</span>
+      <span class="badge badge-date">2026-06-19</span>
+      <span class="badge badge-type">Perspective</span>
+    </div>
+    <div class="authors">McCowan P, Joseph T, Picataggio CB, Bailey L, Chandi S, Singh A, Surati S, Dember LM, Flythe JE &nbsp;| PMID: 42320575 | <a href="https://doi.org/10.1053/j.ajkd.2026.01.020" target="_blank">DOI</a></div>
+    <div class="section-label">Résultats — PMID 42320575</div>
+    <div class="section-text">Cette perspective, co-rédigée par des patients et des chercheurs d'un essai clinique multicentrique pragmatique en cours sur les maladies rénales chroniques (Division Nephrology and Hypertension, UNC et University of Pennsylvania), synthétise les principes d'un engagement patient authentique dans la recherche clinique. L'engagement patient substantif aligne la recherche sur les priorités des patients, améliore la faisabilité et l'acceptabilité des interventions, renforce le recrutement et la rétention des participants, et favorise la diffusion des résultats. Les obstacles persistants incluent une implication tokeniste, des rôles mal définis, une portée d'influence limitée et un engagement insuffisant dans toutes les phases de la recherche. Les stratégies efficaces comprennent le renforcement des capacités par la formation, le co-développement de plans de communication, la flexibilité, la compensation équitable et l'évaluation qualitative de l'engagement. Des exemples concrets tirés de l'essai multicentrique illustrent comment ces principes s'appliquent dans une recherche pragmatique en néphrologie-hypertension.</div>
+    <div class="implications-box">
+      <div class="section-label">Implications Medical Affairs</div>
+      <div class="section-text">Le patient engagement authentique dans la conception des essais cliniques améliore la pertinence des critères de jugement, la rétention des participants et la translatabilité des résultats, ce qui est directement applicable aux essais commandités par l'industrie en hypertension et maladies rénales. Les équipes Medical Affairs peuvent s'inspirer de ce cadre pour structurer des panels consultatifs patients dans leurs programmes de développement clinique, répondant ainsi aux exigences croissantes des agences réglementaires (FDA, EMA) en matière de recherche centrée sur le patient. L'intégration de représentants patients dès les phases d'idéation des études représente une opportunité de différenciation dans les partenariats académiques et dans les soumissions aux comités d'éthique et aux payeurs.</div>
+    </div>
+  </div>
+
+</div><!-- end topic 6 -->
+
+<!-- ============================================================ -->
+<!-- TOPIC 7: ENVIRONMENTAL AND RISK FACTORS -->
+<!-- ============================================================ -->
+<div class="topic-section" id="env">
+  <div class="topic-header">
+    <h2>7. Facteurs Environnementaux et de Risque</h2>
+    <span class="count">13 articles</span>
+  </div>
+
+  <!-- PMID 42321773 -->
+  <div class="article-card">
+    <div class="article-title"><a href="https://pubmed.ncbi.nlm.nih.gov/42321773/" target="_blank">Dementia risk by metabolic health and obesity in two prospective cohorts</a></div>
+    <div class="article-meta">
+      <span class="badge badge-journal">BMC Medicine</span>
+      <span class="badge badge-na">Tier NA</span>
+      <span class="badge badge-date">2026-06-19</span>
+      <span class="badge badge-type">Étude de cohorte</span>
+    </div>
+    <div class="authors">Nakash M, Ojalehto Lindfors E, Zhan Y, Dahl Aslan AK, Reynolds CA, Ler P, Karlsson IK &nbsp;| PMID: 42321773 | <a href="https://doi.org/10.1186/s12916-026-05002-8" target="_blank">DOI</a></div>
+    <div class="section-label">Résultats — PMID 42321773</div>
+    <div class="section-text">Cette étude a analysé les données de 11 482 participants de l'Health and Retirement Study (HRS, USA) et de 13 068 participants du Swedish Twin Registry (STR), âgés de 45 à 100 ans, pour examiner les associations conjointes de l'obésité et du statut métabolique (incluant l'hypertension comme composante de la définition «métaboliquement malsain») avec le risque de démence, stratifiées par âge et sexe. Le statut métaboliquement malsain (MUNO) était associé à un risque accru de démence indépendamment du statut pondéral, atteignant la significativité dans les analyses de milieu de vie chez les femmes dans la HRS (HR 1,62 ; IC 95 % 1,05–2,49) et en fin de vie dans la STR (HR 1,13 ; IC 95 % 1,02–1,25). L'obésité métaboliquement saine (MHO) ne montrait pas de risque accru de démence et montrait même des tendances protectrices dans certaines analyses, soulignant que le statut métabolique prime sur le poids. Les associations variaient significativement selon le stade de vie et le sexe, avec un risque plus élevé en milieu de vie comparé à la vieillesse pour les femmes. Ces résultats de deux cohortes indépendantes confirment que l'hypertension, composante clé du syndrome métabolique, est un facteur central dans la progression vers la démence.</div>
+    <div class="implications-box">
+      <div class="section-label">Implications Medical Affairs</div>
+      <div class="section-text">La confirmation que le statut métaboliquement malsain (incluant l'HTA) en milieu de vie prédit le risque de démence – indépendamment de l'obésité – renforce le message de contrôle tensionnel précoce avant 65 ans comme stratégie de préservation cognitive à long terme. Ces données issues de deux cohortes indépendantes (HRS + STR) offrent une robustesse épidémiologique forte pour soutenir des argumentaires de santé publique sur le bénéfice cognitif du traitement antihypertenseur, avec des implications pour les payeurs et les guidances cliniques. Les équipes Medical Affairs peuvent développer des communications interdisciplinaires neurologie–cardiologie sur le continuum HTA → déclin cognitif, en s'appuyant sur ces données pour des symposia académiques et des présentations aux décideurs de santé.</div>
+    </div>
+  </div>
+
+  <!-- PMID 42321952 -->
+  <div class="article-card">
+    <div class="article-title"><a href="https://pubmed.ncbi.nlm.nih.gov/42321952/" target="_blank">The impact of calcium supplementation on hypertension management in postmenopausal women with hypocalcemia</a></div>
+    <div class="article-meta">
+      <span class="badge badge-journal">BMC Nutrition</span>
+      <span class="badge badge-na">Tier NA</span>
+      <span class="badge badge-date">2026-06-19</span>
+      <span class="badge badge-type">Étude prospective</span>
+    </div>
+    <div class="authors">Alaarag AF, Naseem M, Khattab H, Younis R, Hamam A, Shalaby HK, Abou-Omar MAE &nbsp;| PMID: 42321952 | <a href="https://doi.org/10.1186/s40795-026-01377-2" target="_blank">DOI</a></div>
+    <div class="section-label">Résultats — PMID 42321952</div>
+    <div class="section-text">Cette étude prospective a inclus 300 femmes ménopausées avec hypocalcémie et hypertension établie, recevant toutes du carbonate de calcium (1 000 mg/jour en deux prises) en addition de leur traitement antihypertenseur habituel, avec évaluation de la pression artérielle et de la calcémie à baseline et à 3 mois. Les femmes ayant atteint la normocalcémie à 3 mois présentaient des améliorations statistiquement significatives de la PAS, de la PAD et un plus grand taux d'atteinte de la cible tensionnelle (p = 0,017, 0,029 et 0,012 respectivement). Les femmes en hypocalcémie persistante à 3 mois étaient plus jeunes à la ménopause (48,65 vs 49,44 ans ; p = 0,017), suggérant un lien entre précocité ménopausique et résistance à la correction calcique. La correction de l'hypocalcémie se révèle ainsi un levier complémentaire au contrôle tensionnel chez les femmes ménopausées hypocalcémiques, avec des implications pour les stratégies de prise en charge intégrée. Ces résultats indiquent qu'une évaluation systématique du statut calcique pourrait être pertinente dans l'exploration de l'HTA féminine post-ménopausique difficile à contrôler.</div>
+    <div class="implications-box">
+      <div class="section-label">Implications Medical Affairs</div>
+      <div class="section-text">L'impact positif de la correction calcique sur le contrôle tensionnel ouvre une piste complémentaire peu explorée dans la prise en charge de l'HTA féminine post-ménopausique, avec des implications pour le dépistage de l'hypocalcémie dans cette population spécifique. Ces données peuvent alimenter des discussions entre gynécologues, endocrinologues et cardiologues sur l'approche intégrée de la santé post-ménopausique incluant contrôle tensionnel et homéostasie minérale. Les équipes Medical Affairs peuvent explorer des études de phase IV pour évaluer l'impact de la supplémentation calcique sur l'efficacité des antihypertenseurs en population post-ménopausique hypocalcémique.</div>
+    </div>
+  </div>
+
+  <!-- PMID 42320772 -->
+  <div class="article-card">
+    <div class="article-title"><a href="https://pubmed.ncbi.nlm.nih.gov/42320772/" target="_blank">Vasodilatory Study of Mitragyna speciosa (Korth.) Havil Methanolic Extract Using Rats Aortic Ring Assay</a></div>
+    <div class="article-meta">
+      <span class="badge badge-journal">Journal of Ethnopharmacology</span>
+      <span class="badge badge-na">Tier NA</span>
+      <span class="badge badge-date">2026-06-19</span>
+      <span class="badge badge-type">Étude ex vivo</span>
+    </div>
+    <div class="authors">Loh HW, Tew WY, Yan CS, Low CY, Hassan Z, Qiu Q, Zhang B, Zhang Z, Zhang RL, Chear NJY, Yam MF &nbsp;| PMID: 42320772 | <a href="https://doi.org/10.1016/j.jep.2026.122057" target="_blank">DOI</a></div>
+    <div class="section-label">Résultats — PMID 42320772</div>
+    <div class="section-text">Cette étude ex vivo sur anneaux aortiques de rat a évalué l'activité vasodilatatrice de l'extrait méthanolique de feuilles de Mitragyna speciosa (KME, «ketum»), plante traditionnellement utilisée en Asie du Sud-Est notamment pour la gestion de l'hypertension et de la fatigue. Le KME produisait une relaxation concentration-dépendante des anneaux aortiques précontractés ; la mitragynine, alcaloïde majeur identifié par UPLC-MS/MS, présentait un profil de relaxation similaire. Le mécanisme principal impliquait la voie endothéliale NO/sGC/cGMP, avec des contributions partielles des récepteurs muscariniques et des canaux potassiques et calciques. La dénudation endothéliale et l'inhibition de la signalisation NO/sGC/cGMP réduisaient significativement la relaxation induite par le KME, confirmant la dépendance endothéliale du mécanisme. Ces résultats fournissent un soutien mécanistique préliminaire à l'usage traditionnel antihypertensif mais ne permettent pas de conclure à une efficacité in vivo, nécessitant des études pharmacologiques, pharmacocinétiques et de sécurité complémentaires.</div>
+    <div class="implications-box">
+      <div class="section-label">Implications Medical Affairs</div>
+      <div class="section-text">La caractérisation mécanistique de la vasorelaxation via la voie NO/sGC/cGMP représente une piste de pharmacologie naturelle émergente à surveiller pour des nouveaux antihypertenseurs d'origine végétale, bien que les preuves restent strictement précliniques ex vivo. Les équipes Medical Affairs doivent surveiller ce domaine pour anticiper la concurrence potentielle des médecines traditionnelles dans certains marchés asiatiques, et documenter les besoins en études de sécurité toxicologique avant toute comparaison avec les antihypertenseurs établis. Ce travail illustre l'enjeu des interactions entre médecines traditionnelles et traitements conventionnels de l'HTA, thème pertinent pour des programmes d'éducation médicale dans les marchés d'Asie du Pacifique.</div>
+    </div>
+  </div>
+
+  <!-- PMID 42321103 -->
+  <div class="article-card">
+    <div class="article-title"><a href="https://pubmed.ncbi.nlm.nih.gov/42321103/" target="_blank">Cardiovascular disease incidence among aging patients with rheumatoid arthritis: Results from the Canadian Longitudinal Study on Aging (CLSA)</a></div>
+    <div class="article-meta">
+      <span class="badge badge-journal">Nutrition, Metabolism and Cardiovascular Diseases</span>
+      <span class="badge badge-na">Tier NA</span>
+      <span class="badge badge-date">2026-06-12</span>
+      <span class="badge badge-type">Étude de cohorte</span>
+    </div>
+    <div class="authors">Hajiesmaeili Y, Espin Garcia O, Azarpazhooh MR, Stranges S, Barra L &nbsp;| PMID: 42321103 | <a href="https://doi.org/10.1016/j.numecd.2026.104845" target="_blank">DOI</a></div>
+    <div class="section-label">Résultats — PMID 42321103</div>
+    <div class="section-text">Cette analyse longitudinale canadienne (CLSA, 2011–2021, trois temps de mesure) portant sur 19 844 participants a montré que les patients avec polyarthrite rhumatoïde (PR, n=553) présentaient une incidence de maladies cardiovasculaires significativement plus élevée que les sujets sans PR (IRR = 1,69 ; IC 95 % 1,34–2,11). L'analyse multivariée identifiait l'hypertension parmi les facteurs de risque indépendants de MCV dans cette population rhumatologique, avec d'autres facteurs incluant la PR elle-même, l'élévation de la CRP, les DMARDs non-méthotrexate, le sexe masculin, l'âge avancé, la faible activité physique, le tabagisme, la mauvaise qualité du sommeil, le diabète et les troubles de l'humeur. Les analyses stratifiées révélaient des associations PR–MCV plus fortes chez les femmes, les personnes de moins de 65 ans et ceux à faible niveau d'éducation, définissant des sous-populations à prioriser. Les données de 3 temps de mesure sur 10 ans permettaient d'explorer la temporalité des associations, renforçant la valeur épidémiologique de ces résultats. L'hypertension constitue ainsi l'un des cofacteurs modifiables majeurs à gérer activement dans cette population rhumatologique à risque cardiovasculaire accru.</div>
+    <div class="implications-box">
+      <div class="section-label">Implications Medical Affairs</div>
+      <div class="section-text">L'hypertension comme facteur de risque cardiovasculaire modifiable en contexte de PR identifie une opportunité pour les équipes Medical Affairs des antihypertenseurs de développer des collaborations avec les rhumatologues sur la gestion cardiovasculaire intégrée de ces patients. Ces données d'une grande cohorte canadienne renforcent les messages sur le dépistage systématique et le traitement de l'HTA chez les patients PR, en ligne avec les recommandations cardiovasculaires des sociétés de rhumatologie (EULAR cardiovascular management guidelines). La stratification du risque par sexe, âge et statut socio-économique dans ce travail peut guider des programmes de prévention cardiovasculaire ciblés dans les sous-populations de patients PR les plus vulnérables.</div>
+    </div>
+  </div>
+
+  <!-- PMID 42321133 -->
+  <div class="article-card">
+    <div class="article-title"><a href="https://pubmed.ncbi.nlm.nih.gov/42321133/" target="_blank">Eosinophil-linked pulmonary circulation in EGPA Improves under anti-IL-5/R therapy: A longitudinal study</a></div>
+    <div class="article-meta">
+      <span class="badge badge-journal">European Journal of Internal Medicine</span>
+      <span class="badge badge-na">Tier NA</span>
+      <span class="badge badge-date">2026-06-19</span>
+      <span class="badge badge-type">Étude longitudinale</span>
+    </div>
+    <div class="authors">Carlucci P, Marozzi MS, Corvasce F, Noviello S, Spataro F, Desantis V, Montagnani M, Ria R, Cicco S, Vacca A &nbsp;| PMID: 42321133 | <a href="https://doi.org/10.1016/j.ejim.2026.107033" target="_blank">DOI</a></div>
+    <div class="section-label">Résultats — PMID 42321133</div>
+    <div class="section-text">Cette étude longitudinale a évalué 27 patients atteints de granulomatose éosinophilique avec polyangéite (EGPA) par échocardiographie pour explorer la relation entre charge éosinophilique et circulation pulmonaire, et suivre les effets du traitement anti-IL-5/R (mépolizumab ou bénralizumab) sur 24 mois. À baseline, 33 % des patients présentaient une pression artérielle pulmonaire systolique (PAPs) supérieure à 25 mmHg malgré l'absence d'hypertension pulmonaire clinique, et les comptages éosinophiliques élevés étaient associés à une PAPs accrue (p = 0,04) et un ratio TAPSE/PAPs réduit (p = 0,03). Après traitement anti-IL-5/R, la PAPs déclinait significativement de 27,5 à 18,0 mmHg (p = 0,002) et la TRV de 2,30 à 1,80 m/s (p = 0,005), indiquant une amélioration de la charge vasculaire pulmonaire. Les PEC à baseline discriminaient les patients avec probabilité échocardiographique d'HTP avec une AUC de 0,751. Ces données de l'Université de Bari (unité d'hypertension Pirrelli) soutiennent l'importance d'une surveillance échocardiographique systématique dans l'EGPA et indiquent que l'inflammation éosinophilique contribue à une dysfonction vasculaire pulmonaire subclinique réversible sous biothérapie.</div>
+    <div class="implications-box">
+      <div class="section-label">Implications Medical Affairs</div>
+      <div class="section-text">L'amélioration de la circulation pulmonaire sous anti-IL-5/R dans l'EGPA illustre comment des biothérapies ciblant l'inflammation peuvent bénéficier sur la santé vasculaire pulmonaire, un message différenciant pour les équipes Medical Affairs des thérapies anti-éosinophiliques en maladies auto-immunes. Ces données renforcent le besoin de surveillance échocardiographique systématique dans l'EGPA, avec implications pour les recommandations de pratique clinique et les programmes de formation que les équipes Medical Affairs des anti-IL-5 peuvent soutenir. Le lien éosinophilie–HTP subclinique réversible sous traitement représente un angle de communication valorisant les bénéfices vasculaires des biothérapies au-delà du seul contrôle de la vasculite.</div>
+    </div>
+  </div>
+
+  <!-- PMID 42320971 -->
+  <div class="article-card">
+    <div class="article-title"><a href="https://pubmed.ncbi.nlm.nih.gov/42320971/" target="_blank">Exploring associations between epidemiological risk factors and colorectal cancer in Oman: a case-control study</a></div>
+    <div class="article-meta">
+      <span class="badge badge-journal">BMJ Open</span>
+      <span class="badge badge-na">Tier NA</span>
+      <span class="badge badge-date">2026-06-19</span>
+      <span class="badge badge-type">Étude cas-témoin</span>
+    </div>
+    <div class="authors">Rehman S, Shalaby A, Al-Busafi SA, Chan MF, Khabouri SA, Al Hinai M, et al. &nbsp;| PMID: 42320971 | <a href="https://doi.org/10.1136/bmjopen-2026-117673" target="_blank">DOI</a></div>
+    <div class="section-label">Résultats — PMID 42320971</div>
+    <div class="section-text">Cette étude cas-témoin multicentrique omanaise a comparé 166 patients avec cancer colorectal (CCR) et 166 témoins appariés à l'Université Sultan Qaboos et l'Hôpital Royal de Muscat. En analyse multivariée, l'hypertension était associée à un risque de CCR significativement accru (aOR 4,13 ; IC 95 % 2,03–8,42), représentant la deuxième association la plus forte de l'étude après le tabac (aOR 4,35) et dépassant le diabète (aOR 2,70), l'obésité (aOR 2,42) et l'histoire familiale de CCR (aOR 2,10). Cette association forte est cohérente avec des mécanismes biologiques impliquant l'inflammation chronique, l'activation du système rénine-angiotensine et l'insulinorésistance dans la carcinogenèse colorectale. Les auteurs recommandent un dépistage colorectal ciblé chez les patients hypertendus et une gestion optimale des maladies chroniques comme stratégie de prévention du CCR. Ces résultats s'inscrivent dans un contexte de prévalence croissante du CCR en Oman, liée à l'augmentation des facteurs de risque modifiables dont l'HTA et le diabète. Des initiatives nationales de prévention intégrée associant contrôle tensionnel et dépistage oncologique sont préconisées.</div>
+    <div class="implications-box">
+      <div class="section-label">Implications Medical Affairs</div>
+      <div class="section-text">L'association forte entre HTA et risque de CCR (aOR 4,13) identifie les patients hypertendus comme population à dépistage oncologique prioritaire, avec des implications pour les collaborations entre cardiologues et gastro-entérologues dans des programmes de prévention intégrée. Ces données dans le contexte omanais sont pertinentes pour les marchés du Golfe où HTA et CCR sont en progression, avec des arguments pour un contrôle tensionnel rigoureux comme composante d'une stratégie de prévention oncologique globale. Les mécanismes communs (inflammation, RAAS, insulinorésistance) entre HTA et CCR offrent une opportunité de recherche sur les effets potentiellement protecteurs des IEC/ARA II sur le risque colorectal, que les équipes Medical Affairs pourraient explorer dans des études de pharmaco-épidémiologie.</div>
+    </div>
+  </div>
+
+  <!-- PMID 42320510 -->
+  <div class="article-card">
+    <div class="article-title"><a href="https://pubmed.ncbi.nlm.nih.gov/42320510/" target="_blank">Associations of testosterone, sex hormone-binding globulin, and related hormones with risks of cancer death, incident cancer, and incident prostate cancer in men: individual participant data meta-analyses</a></div>
+    <div class="article-meta">
+      <span class="badge badge-journal">The Lancet. Healthy Longevity</span>
+      <span class="badge badge-na">Tier NA</span>
+      <span class="badge badge-date">2026-06-19</span>
+      <span class="badge badge-type">Méta-analyse données individuelles</span>
+    </div>
+    <div class="authors">Marriott RJ, Murray K, Antonio L, Adams RJ, Ballantyne CM, Bauer DC, Bhasin S, et al. &nbsp;| PMID: 42320510 | <a href="https://doi.org/10.1016/j.lanhl.2026.100857" target="_blank">DOI</a></div>
+    <div class="section-label">Résultats — PMID 42320510</div>
+    <div class="section-text">Cette méta-analyse de données individuelles (IPD) a inclus 10 études prospectives (24 510 hommes, 276 931 personnes-années, 2 847 décès par cancer), avec contrôle de multiples covariables incluant explicitement le statut d'hypertension et de diabète dans les modèles d'ajustement. Une testostérone totale basse était associée à un risque accru de mortalité par cancer (HR 1,18 ; IC 95 % 1,04–1,34 pour Q1 vs Q5), avec un risque augmentant pour des taux inférieurs à 8,6 nmol/L. La SHBG et la LH présentaient des associations non linéaires avec le risque de décès par cancer. Des SHBG ou LH basses étaient associées à un risque accru de cancer de la prostate incident (HR 1,28 et 1,45 respectivement). L'ajustement pour le statut d'hypertension dans ces modèles multi-covariables confirme le rôle confondant systématique de l'HTA dans la recherche épidémiologique en oncologie masculine et en santé hormonale.</div>
+    <div class="implications-box">
+      <div class="section-label">Implications Medical Affairs</div>
+      <div class="section-text">Le contrôle systématique de l'hypertension comme covariable dans cette méta-analyse d'envergure illustre son rôle confondant ubiquitaire dans la recherche épidémiologique masculine, signalant son importance dans toute étude de cohorte multi-factorielle en oncologie et endocrinologie. La forte méthodologie IPD de ce travail dans le Lancet Healthy Longevity peut intéresser les équipes Medical Affairs développant des études de vie réelle chez des populations masculines hypertendues vieillissantes, où les interactions hormones–cancers–HTA sont pertinentes. Ces données contribuent à la compréhension des interactions entre santé cardiovasculaire (HTA), métabolisme hormonal et risque oncologique, avec des implications pour les programmes de médecine préventive masculine intégrée.</div>
+    </div>
+  </div>
+
+  <!-- PMID 42321614 -->
+  <div class="article-card">
+    <div class="article-title"><a href="https://pubmed.ncbi.nlm.nih.gov/42321614/" target="_blank">Physical frailty, depression and multimorbidity among older adults in Lima, Peru: a cross-sectional study</a></div>
+    <div class="article-meta">
+      <span class="badge badge-journal">BMC Geriatrics</span>
+      <span class="badge badge-na">Tier NA</span>
+      <span class="badge badge-date">2026-06-20</span>
+      <span class="badge badge-type">Étude transversale</span>
+    </div>
+    <div class="authors">Flores-Flores O, Zevallos-Morales A, Pollard SL, Siddharthan T, Gross AL, Parodi JF, Gallo JJ, Hurst JR, Checkley W &nbsp;| PMID: 42321614 | <a href="https://doi.org/10.1186/s12877-026-07850-8" target="_blank">DOI</a></div>
+    <div class="section-label">Résultats — PMID 42321614</div>
+    <div class="section-text">Cette étude transversale en zones urbaines à faibles ressources de Lima (Pérou) a inclus 1 029 participants de 60 ans ou plus et a utilisé une analyse par classes latentes pour identifier des profils de multimorbidité physique incluant l'hypertension, le diabète, les maladies cardiaques, l'arthrite, la BPCO et l'asthme. Trois classes ont été identifiées : cardiométabolique, multisystémique et apparemment saine ; seule la classe multisystémique était associée à une prévalence de dépression significativement plus élevée (aPR = 1,80 ; IC 95 % 1,02–3,06) comparée à la classe saine. Parmi les individus fragiles, l'association multisystémique–dépression était considérablement amplifiée (aPR 6,25 ; IC 95 % 1,28–30,63), sans association significative chez les non-fragiles. La prévalence de dépression globale était de 19,5 % dans cette population âgée urbaine défavorisée. Ces données confirment que la fragilité amplifie l'impact de la multimorbidité incluant l'HTA sur les résultats dépressifs, dans les populations âgées à ressources limitées d'Amérique latine.</div>
+    <div class="implications-box">
+      <div class="section-label">Implications Medical Affairs</div>
+      <div class="section-text">Cette étude péruvienne illustre comment l'hypertension, comme composante de la multimorbidité, contribue à la charge dépressive des sujets âgés fragiles dans les pays à revenus intermédiaires, un contexte croissant pour les stratégies d'accès aux marchés thérapeutiques en Amérique latine. Les équipes Medical Affairs peuvent soutenir des programmes de soins gériatriques intégrés qui adressent simultanément le contrôle tensionnel, la fragilité et la santé mentale dans des systèmes de santé primaires sous-dotés. Ces résultats renforcent l'argument que le traitement préventif de l'HTA contribue à préserver la santé mentale et l'autonomie fonctionnelle à un âge avancé, élargissant le bénéfice perçu des antihypertenseurs au-delà des seuls événements cardiovasculaires.</div>
+    </div>
+  </div>
+
+  <!-- PMID 42321923 -->
+  <div class="article-card">
+    <div class="article-title"><a href="https://pubmed.ncbi.nlm.nih.gov/42321923/" target="_blank">Association between dietary patterns and metabolic syndrome and its components in quilombola women: A population-based cross-sectional study in Alagoas, Northeast Brazil</a></div>
+    <div class="article-meta">
+      <span class="badge badge-journal">BMC Nutrition</span>
+      <span class="badge badge-na">Tier NA</span>
+      <span class="badge badge-date">2026-06-19</span>
+      <span class="badge badge-type">Étude transversale</span>
+    </div>
+    <div class="authors">Barbosa LB, Rodrigues Vasconcelos NB, Dos Santos EA, Dos Santos TR, Ataide-Silva T, da Silva Ferreira H &nbsp;| PMID: 42321923 | <a href="https://doi.org/10.1186/s40795-026-01402-4" target="_blank">DOI</a></div>
+    <div class="section-label">Résultats — PMID 42321923</div>
+    <div class="section-text">Cette étude transversale en population réalisée auprès de 895 femmes de communautés quilombola d'Alagoas (Nord-Est Brésil), âgées de 19 à 59 ans, a évalué sept profils alimentaires identifiés par analyse factorielle et leurs associations avec le syndrome métabolique (MetS, critères Joint Interim Statement intégrant l'hypertension comme composante). La prévalence du MetS était élevée à 48,3 %. Aucun profil alimentaire n'était directement associé au MetS global, mais des associations spécifiques avec ses composantes ont été trouvées : le profil «viande et légumineuses» (adhérence modérée) était associé à une plus faible prévalence d'hypertriglycéridémie (PR = 0,76), et le profil «laitier et soupes» à une moindre prévalence d'hyperglycémie et de bas HDL. Les profils «céréales/racines, huiles, infusions» et «fruits» (deuxième quartile) étaient associés à une prévalence accrue d'obésité abdominale. L'hypertension artérielle, composante majeure du MetS, était très prévalente dans cette population afro-descendante défavorisée, illustrant les inégalités de santé cardiométabolique persistantes au Brésil.</div>
+    <div class="implications-box">
+      <div class="section-label">Implications Medical Affairs</div>
+      <div class="section-text">La très haute prévalence du MetS (48 %) et de ses composantes dont l'HTA dans cette population afro-brésilienne illustre les inégalités de santé cardiométabolique persistantes, avec des implications pour des programmes d'accès aux thérapies antihypertensives dans les communautés défavorisées. Les équipes Medical Affairs peuvent contribuer à des partenariats de santé publique communautaire avec des programmes nutritionnels culturellement adaptés en complément des traitements pharmacologiques antihypertenseurs dans les marchés émergents d'Amérique latine. Ces données brésiliennes renforcent l'importance d'une attention aux déterminants sociaux de la santé dans les stratégies d'accès aux traitements cardiovasculaires dans les populations vulnérables.</div>
+    </div>
+  </div>
+
+  <!-- PMID 42320334 -->
+  <div class="article-card">
+    <div class="article-title"><a href="https://pubmed.ncbi.nlm.nih.gov/42320334/" target="_blank">Center-based obstacles and facilitators in the utilization of kidney paired donation in the United States, 2008–2023: A scoping review</a></div>
+    <div class="article-meta">
+      <span class="badge badge-journal">Transplantation Reviews</span>
+      <span class="badge badge-na">Tier NA</span>
+      <span class="badge badge-date">2026-04-22</span>
+      <span class="badge badge-type">Revue systématique</span>
+    </div>
+    <div class="authors">Thiessen C, Alagoz E, Pati B, Garg N, Leishman R, Christensen L, Danobeitia JS, et al. &nbsp;| PMID: 42320334 | <a href="https://doi.org/10.1016/j.trre.2026.101022" target="_blank">DOI</a></div>
+    <div class="section-label">Résultats — PMID 42320334</div>
+    <div class="section-text">Cette scoping review a analysé 29 études identifiant les obstacles et facilitateurs au niveau des centres à l'utilisation du don de rein apparié (KPD) aux États-Unis entre 2008 et 2023. Les principales catégories d'obstacles identifiées étaient : préoccupations cliniques, problèmes logistiques, limites d'infrastructure, aspects financiers et efficience. Les facilitateurs comprenaient des modifications du programme KPD, des changements de pratiques cliniques au niveau des centres et des investissements en infrastructure. Cette revue émanant des équipes de Nephrology and Hypertension de Weill Cornell (New York) et d'autres centres de transplantation américains souligne les barrières systémiques à l'accès à la transplantation pour les patients avec MRC terminale souvent causée par l'HTA. L'hypertension artérielle est l'une des étiologies majeures de la MRC terminale nécessitant transplantation, ce qui donne une pertinence indirecte à ce travail dans le contexte de la veille hypertension.</div>
+    <div class="implications-box">
+      <div class="section-label">Implications Medical Affairs</div>
+      <div class="section-text">Bien que d'intérêt indirect pour l'hypertension artérielle, cette revue documente les barrières systémiques à l'accès à la transplantation rénale pour des patients dont l'HTA est souvent l'étiologie principale de la MRC terminale, avec des implications pour les équipes Medical Affairs des thérapies néphroprotectrices. Les partenariats avec des centres de transplantation rénale peuvent constituer un levier d'accès à des populations de patients hypertendus avec MRC avancée pour des programmes de données en vie réelle. Les équipes Medical Affairs en maladie rénale chronique peuvent s'appuyer sur ce travail pour alimenter des discussions sur la prévention primaire de la MRC par un contrôle tensionnel rigoureux comme alternative à la transplantation.</div>
+    </div>
+  </div>
+
+  <!-- PMID 42321615 -->
+  <div class="article-card">
+    <div class="article-title"><a href="https://pubmed.ncbi.nlm.nih.gov/42321615/" target="_blank">Sleep quality and chronotype in primary headache disorders: a nationwide population-based study of 5,311 Polish adults</a></div>
+    <div class="article-meta">
+      <span class="badge badge-journal">The Journal of Headache and Pain</span>
+      <span class="badge badge-na">Tier NA</span>
+      <span class="badge badge-date">2026-06-19</span>
+      <span class="badge badge-type">Étude transversale</span>
+    </div>
+    <div class="authors">Marschollek K, Martynowicz H, Budrewicz S, Straburzyński M, Waliszewska-Prosół M &nbsp;| PMID: 42321615 | <a href="https://doi.org/10.1186/s10194-026-02425-9" target="_blank">DOI</a></div>
+    <div class="section-label">Résultats — PMID 42321615</div>
+    <div class="section-text">Cette étude transversale nationale incluant 5 311 adultes polonais recrutés via un panel en ligne a évalué la qualité du sommeil (score PSQI) et le chronotype (MEQ) selon le type de céphalée (ICHD-3). Les participants migraineux (n=1 523) rapportaient la plus mauvaise qualité de sommeil (PSQI médian 7 vs 5 chez les contrôles) et la prévalence de mauvais sommeil la plus élevée (64,1 % vs 38,7 % ; p &lt; 0,001). Après ajustement, la migraine restait significativement associée à des scores PSQI plus élevés (β = 2,09) ainsi qu'à un chronotype vespéral (β ajusté = −1,38 ; p &lt; 0,001). Un des co-auteurs est affilié au département de «Diabetology, Hypertension and Internal Diseases» de l'Université de Wroclaw, reflétant la co-occurrence clinique fréquente de céphalées chroniques et de troubles tensionnels. La mauvaise qualité du sommeil chez les migraineux était modérément corrélée à une qualité de vie réduite (r = −0,45) et à un stress perçu élevé (r = 0,34).</div>
+    <div class="implications-box">
+      <div class="section-label">Implications Medical Affairs</div>
+      <div class="section-text">Le lien entre mauvais sommeil et migraine partage des mécanismes avec l'hypertension nocturne (profil non-dipper), ouvrant des pistes pour des approches thérapeutiques intégrées dans les populations à double comorbidité migraine–HTA nocturne. Les équipes Medical Affairs peuvent cibler les neurologues spécialisés en céphalées pour des messages sur la prévalence de l'HTA et l'intérêt d'une MAPA pour identifier le profil tensionnel nocturne dans cette population. Cette étude en population générale (5 311 patients) constitue un fond épidémiologique utile pour contextualiser les discussions sur la prise en charge holistique des patients à comorbidités neurologique et cardiovasculaire.</div>
+    </div>
+  </div>
+
+  <!-- PMID 42321351 -->
+  <div class="article-card">
+    <div class="article-title"><a href="https://pubmed.ncbi.nlm.nih.gov/42321351/" target="_blank">Reply to: "Comment on 'Sex-specific trajectories of blood pressure and pulse pressure across body mass index categories'"</a></div>
+    <div class="article-meta">
+      <span class="badge badge-journal">Hypertension Research</span>
+      <span class="badge badge-na">Tier NA</span>
+      <span class="badge badge-date">2026-06-19</span>
+      <span class="badge badge-type">Correspondance</span>
+    </div>
+    <div class="authors">Kawasoe S, Kubozono T, Akasaki Y, Tokutake D, Shinchi S, Ojima S, Yamaguchi S, Mukai S, Miyahara H, Tokushige K, Miyata M, Ohishi M &nbsp;| PMID: 42321351 | <a href="https://doi.org/10.1038/s41440-026-02717-2" target="_blank">DOI</a></div>
+    <div class="section-label">Résultats — PMID 42321351</div>
+    <div class="section-text">Cette lettre de réponse émanant du département de médecine cardiovasculaire et hypertension de l'Université de Kagoshima (Japon) répond à un commentaire sur une étude originale portant sur les trajectoires sexe-spécifiques de la pression artérielle et de la pression différentielle selon les catégories d'IMC sur 13 ans de données de bilan de santé. L'étude originale explorait comment les trajectoires tensionnelles diffèrent entre hommes et femmes selon le niveau d'IMC sur une période de suivi prolongée, avec l'analyse LOWESS (Locally Weighted Scatterplot Smoothing) comme outil statistique clé. La lettre apporte des précisions méthodologiques sur les limites et l'interprétation de l'approche utilisée, en réponse aux critiques soulevées par les commentateurs. Ce type d'échange dans Hypertension Research contribue à la maturation scientifique des données sur les différences sexuelles dans l'évolution tensionnelle, thème à fort enjeu pour les recommandations cliniques sex-différenciées. L'absence de résumé structuré reflète le format lettre de réponse.</div>
+    <div class="implications-box">
+      <div class="section-label">Implications Medical Affairs</div>
+      <div class="section-text">Les différences sexe-spécifiques dans les trajectoires tensionnelles selon l'IMC représentent une piste importante pour une médecine de précision en hypertension, avec des implications pour les analyses de sous-groupes dans les essais cliniques et les recommandations thérapeutiques différenciées par sexe. Les équipes Medical Affairs peuvent s'appuyer sur ce corpus de données japonaises pour enrichir des argumentaires sur la nécessité d'un suivi personnalisé selon le sexe et le statut pondéral en hypertension. Ces échanges scientifiques dans Hypertension Research illustrent l'activité de la recherche épidémiologique japonaise en hypertension, un marché clé nécessitant une veille scientifique soutenue.</div>
+    </div>
+  </div>
+
+  <!-- PMID 42320623 -->
+  <div class="article-card">
+    <div class="article-title"><a href="https://pubmed.ncbi.nlm.nih.gov/42320623/" target="_blank">Reply to: "External validation of a simple risk stratification for portal hypertension-related clinical deterioration in patients with ascites"</a></div>
+    <div class="article-meta">
+      <span class="badge badge-journal">JHEP Reports</span>
+      <span class="badge badge-na">Tier NA</span>
+      <span class="badge badge-date">2026-06-19</span>
+      <span class="badge badge-type">Correspondance</span>
+    </div>
+    <div class="authors">Balcar L, Tonon M, Valls J, Reiberger T, García-Pagán JC, Semmler G, Piano S &nbsp;| PMID: 42320623 | <a href="https://doi.org/10.1016/j.jhepr.2026.101931" target="_blank">DOI</a></div>
+    <div class="section-label">Résultats — PMID 42320623</div>
+    <div class="section-text">Cette lettre de réponse publiée dans JHEP Reports (revue d'innovation en hépatologie, Vienne/Padoue/Barcelone) concerne la stratification du risque de détérioration clinique liée à l'hypertension portale chez les patients avec ascite. L'hypertension portale, résultant d'une résistance vasculaire hépatique accrue dans la cirrhose, est une entité distincte de l'hypertension artérielle systémique mais partage certains mécanismes vasculaires (dysfonction endothéliale, activation neurohormonale). La lettre répond à une publication sur la validation externe d'un outil simple de stratification du risque de détérioration clinique chez des patients cirrhotiques, contribuant au débat méthodologique en hémodynamique hépatique. L'inclusion de cet article dans la veille illustre les limites d'une recherche par mots libres sur «hypertension» qui capte à la fois l'HTA artérielle et l'HTA portale. Ce travail n'a pas de pertinence directe pour les thérapies antihypertensives artérielles.</div>
+    <div class="implications-box">
+      <div class="section-label">Implications Medical Affairs</div>
+      <div class="section-text">Bien que ne concernant pas l'hypertension artérielle, cette publication illustre les limites d'une veille par termes libres et la nécessité d'un filtre humain pour distinguer les publications en HTA artérielle des travaux connexes en HTA portale ou pulmonaire. Les équipes Medical Affairs doivent noter que certains patients sous antihypertenseurs peuvent présenter des comorbidités hépatiques avec HTP, créant des interactions cliniques importantes (vasodilatateurs dans la cirrhose), thème à documenter dans des sections d'interactions médicamenteuses. Ce travail ne génère pas d'action Medical Affairs directe pour les thérapies antihypertensives artérielles mais enrichit la compréhension des interactions cardiohépatiques dans les populations cirrhotiques à comorbidités cardiovasculaires.</div>
+    </div>
+  </div>
+
+</div><!-- end topic 7 -->
+
+</div><!-- end container -->
+
+<footer>
+  <p>Veille Hypertension Artérielle &mdash; Édition 2026-06-21 &mdash; 42 articles nouveaux &mdash; 7 thèmes couverts</p>
+  <p style="margin-top:4px">Source : PubMed (NCBI) &mdash; Fenêtre d'indexation edat : 2026-06-20 → 2026-06-21 &mdash; Archivage automatisé</p>
+  <p style="margin-top:4px; font-style:italic">Les résumés et implications sont générés à titre informatif et ne constituent pas un avis médical ou réglementaire.</p>
+</footer>
+
+</body>
+</html>
+    <div class="section-text">Cette analyse des données NHANES 2013–2014 portant sur 3 116 adultes a évalué la relation entre l'IMC et la calcification aortique abdominale sévère (AAC) diagnostiquée par score Kauppila sur DXA. Après ajustement complet, un IMC plus élevé était significativement associé à des odds inférieurs d'AAC sévère (OR = 0,89 ; IC 95 % 0,81–0,98 ; p = 0,013), et les individus obèses présentaient 62 % moins d'odds d'AAC sévère comparés aux normaux (OR = 0,38 ; IC 95 % 0,16–0,94 ; p = 0,037). Cette relation inverse persistait dans les sous-groupes masculins, âgés, et notamment dans le sous-groupe sans hypertension ni diabète. L'analyse par spline cubique restreinte confirmait une tendance non linéaire significative (p pour non-linéarité = 0,0023). Ces résultats apportent une contribution à la littérature sur le «paradoxe de l'obésité» dans le contexte de la calcification vasculaire, soulevant des questions sur les mécanismes protecteurs potentiels de la masse grasse contre la médiacalcose aortique.
