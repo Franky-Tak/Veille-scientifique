@@ -1,0 +1,890 @@
+#!/usr/bin/env python3
+"""Build the 2026-08-10 hypertension digest and update archive.json."""
+import json, datetime
+
+TODAY = "2026-08-10"
+
+# ─────────────────────────────────────────────
+# ARTICLE DATA (from PubMed, deduplicated)
+# ─────────────────────────────────────────────
+
+ARTICLES = {
+
+# ── TOPIC 1: Hypertension Epidemiology ──────────────────────────────────────
+"T1": [
+  {
+    "pmid": "42571854",
+    "title": "Aldosterone dysregulation in essential hypertension.",
+    "journal": "The American Journal of Cardiology",
+    "pub_date": "2026-08-09",
+    "tier": "NA", "if_est": "NA",
+    "findings": (
+        "This retrospective study used electronic health records from 9,129 adults with essential hypertension "
+        "at Baylor Scott and White Health (January 2022 – October 2024), defining aldosterone dysregulation as "
+        "an aldosterone-to-renin ratio (ARR) greater than 10 using plasma renin activity (PRA) or greater than 1 "
+        "using plasma renin concentration (PRC). "
+        "Primary outcomes were uncontrolled hypertension (systolic blood pressure ≥130 mmHg) and stage 2 "
+        "hypertension (SBP ≥140 mmHg) assessed within one year of aldosterone measurement. "
+        "Aldosterone dysregulation was present in 39.4% of all patients and was significantly more prevalent "
+        "among those with uncontrolled versus controlled hypertension (41.5% vs 31.9%). "
+        "In adjusted multivariable logistic regression, aldosterone dysregulation was independently associated "
+        "with uncontrolled hypertension (OR 1.40; 95% CI 1.26–1.56) and stage 2 hypertension (OR 1.38; 95% CI 1.26–1.50). "
+        "The dysregulation was more common in patients requiring more antihypertensive medications, affecting 44.2% of "
+        "those on four or more agents, suggesting a dose-response relationship between aldosterone excess and treatment "
+        "resistance; however, the retrospective single-health-system design and reliance on administrative coding "
+        "limit causal inference."
+    ),
+    "implications": (
+        "This study documents that aldosterone dysregulation affects nearly four in ten hypertensive patients and drives "
+        "uncontrolled blood pressure, underscoring a substantial unmet need not fully addressed by current antihypertensive "
+        "regimens and supporting guideline expansion of aldosterone assessment in routine hypertension workup. "
+        "From a product positioning standpoint, the data reinforce the therapeutic rationale for non-steroidal mineralocorticoid "
+        "receptor antagonists (MRAs) in a broad essential hypertension population beyond classical primary aldosteronism indications. "
+        "Medical Affairs should prioritize KOL engagement with hypertension specialists to translate these real-world findings into "
+        "evidence-based screening algorithms and highlight the clinical differentiation of aldosterone-targeted treatment."
+    ),
+  },
+  {
+    "pmid": "42570943",
+    "title": "Prevalence and clinical correlates of positive aldosterone-to-renin ratio screening in obese hypertensive patients with obstructive sleep apnea: a Southeast Asian cross-sectional study.",
+    "journal": "Journal of Human Hypertension",
+    "pub_date": "2026-08-08",
+    "tier": "Tier 3", "if_est": "3–10",
+    "findings": (
+        "This cross-sectional study enrolled 160 obese hypertensive adults with confirmed obstructive sleep apnea (OSA) "
+        "in Southeast Asia, measuring plasma aldosterone concentration, plasma renin concentration, serum potassium, "
+        "metabolic indices, and renal Doppler parameters to stratify patients by ARR. "
+        "A total of 11.9% of patients were classified as ARR-positive (Group 1) and 20.0% showed low renin/negative ARR (Group 2), "
+        "indicating a notable prevalence of primary aldosteronism or aldosterone-excess states in this population. "
+        "Serum potassium was significantly lower in Group 2 compared to Group 3; in male patients, serum potassium, uric acid, "
+        "and therapeutic intensity score (TIS) were significantly associated with RAAS activity. "
+        "No single routine clinical or metabolic parameter reliably identified ARR-positive individuals, implying universal "
+        "screening remains the most reliable strategy. "
+        "The small sample size (n=160), inability to confirm true primary aldosteronism with adrenal vein sampling, and "
+        "single Southeast Asian center limit generalizability."
+    ),
+    "implications": (
+        "This study highlights that roughly one in eight obese hypertensive OSA patients screened positive for aldosterone "
+        "excess, supporting a low threshold for ARR screening in this comorbid population often underrepresented in "
+        "international guidelines. "
+        "The findings are relevant for positioning mineralocorticoid receptor antagonists within combination antihypertensive "
+        "regimens in the growing metabolic-OSA-hypertension phenotype prevalent across Southeast Asia. "
+        "Medical Affairs should leverage this regional data to engage cardiovascular and sleep medicine KOLs in developing "
+        "integrated screening pathways that could accelerate appropriate initiation of aldosterone-targeted therapy."
+    ),
+  },
+  {
+    "pmid": "42571272",
+    "title": "Clinical Profiles of Hospitalized Middle Eastern Patients With Nonvalvular Atrial Fibrillation: Analysis From the JoFib Study.",
+    "journal": "International Journal of Vascular Medicine",
+    "pub_date": "2026-08-07",
+    "tier": "NA", "if_est": "NA",
+    "findings": (
+        "This analysis draws from the Jordan Atrial Fibrillation (JoFib) registry, a prospective multicenter study "
+        "enrolling 536 hospitalized patients with nonvalvular atrial fibrillation between May 2019 and December 2020. "
+        "The cohort had a mean age of 70.2 ± 14.1 years; hypertension was the most common comorbidity at 77.6%, followed "
+        "by diabetes (52.1%) and heart failure (31.3%). "
+        "Patients with new-onset AF (NOAF) were significantly younger and more often smokers, while those with chronic AF "
+        "had greater comorbidity burden and larger left atrial size. "
+        "In-hospital mortality was 6.7% overall but significantly higher in NOAF patients compared to chronic AF. "
+        "Limitations include the registry design with potential selection bias toward hospitalized patients and the "
+        "geographic restriction to Jordan, limiting extrapolation to the broader Middle East."
+    ),
+    "implications": (
+        "The near-universal prevalence of hypertension (77.6%) among hospitalized AF patients in the Middle East "
+        "underscores hypertension as the primary upstream driver of AF in this region, with strong implications for "
+        "integrating antihypertensive therapy into AF prevention guidelines for the MENA population. "
+        "From a Medical Affairs perspective, these data support the positioning of antihypertensive agents—particularly "
+        "those with proven AF reduction benefits—in the Jordanian and regional cardiology market. "
+        "Engaging regional KOLs with Middle Eastern-specific registry data will be critical to tailoring educational programs "
+        "that link blood pressure control to AF burden reduction."
+    ),
+  },
+  {
+    "pmid": "42551240",
+    "title": "Age-sex effect on concurrent prevalence of hypertension and diabetes in Indian subjects: A hospital-based study of more than 56000 adults visiting for preventive checkup.",
+    "journal": "Diabetes & Metabolic Syndrome",
+    "pub_date": "2026-07-25",
+    "tier": "NA", "if_est": "NA",
+    "findings": (
+        "This hospital-based study analyzed electronic health records from over 56,000 adults undergoing preventive "
+        "health checkups across a group of Indian hospitals, examining concurrent prevalence of hypertension and diabetes "
+        "and quantifying their synergy across age and sex categories. "
+        "The overall concurrent prevalence was approximately 5%, nearly twice that expected by chance if the two conditions "
+        "were independent, demonstrating a synergy factor of approximately 2. "
+        "The synergy began rising rapidly at age 40 years in both sexes, continued to increase until approximately age 58 years, "
+        "and then plateaued at nearly 17% by age 70 years. "
+        "Hypertension in patients with diabetes was about four times more common than in those without diabetes, and diabetes "
+        "in hypertensive patients was about 2.5 times as common as in non-hypertensive individuals. "
+        "Limitations include health-check-up population selection bias, cross-sectional design, and hospital-based setting "
+        "that may not represent the general Indian population."
+    ),
+    "implications": (
+        "These data from over 56,000 Indians quantify the cardiometabolic comorbidity burden in the world's most populous "
+        "hypertension market, showing that the hypertension-diabetes synergy accelerates sharply at age 40—a critical window "
+        "for integrated prevention that has major implications for national screening guidelines. "
+        "For Medical Affairs, this supports the positioning of antihypertensive agents with favorable metabolic profiles "
+        "(e.g., ACE inhibitors, ARBs, or novel agents) as first-line treatments in individuals who are approaching the "
+        "midlife inflection point of dual-disease risk. "
+        "KOL engagement should focus on advocating for integrated cardiometabolic screening programs starting at age 40, "
+        "leveraging this data to drive early intervention and treatment uptake in the Indian market."
+    ),
+  },
+  {
+    "pmid": "42571021",
+    "title": "Prevalence and factors associated with atrial fibrillation among adults with type 2 diabetes mellitus at Hoima Regional Referral Hospital, Western Uganda: a cross-sectional study.",
+    "journal": "Cardiovascular Diabetology: Endocrinology Reports",
+    "pub_date": "2026-08-09",
+    "tier": "NA", "if_est": "NA",
+    "findings": (
+        "This hospital-based cross-sectional study enrolled 355 adults with type 2 diabetes mellitus (T2DM) at Hoima "
+        "Regional Referral Hospital in Western Uganda and screened for atrial fibrillation using 12-lead electrocardiography. "
+        "The prevalence of AF was 7.9% (28/355), a substantial burden in a resource-limited setting with limited prior data. "
+        "In multivariable analysis, hypertension was independently associated with AF with an adjusted odds ratio of 3.027 "
+        "(95% CI 1.419–6.431; p=0.020); HIV infection (aOR 2.026), BMI ≥25 kg/m² (aOR 3.014), and poor glycemic control "
+        "(HbA1c ≥8%; aOR 3.813) were also significant. "
+        "Common AF presentations included palpitations, dizziness, fatigue, chest pain, and dyspnea with irregular pulse on exam. "
+        "Key limitations include the single-center hospital-based design, cross-sectional nature, and relatively small sample "
+        "size limiting power for subgroup analyses."
+    ),
+    "implications": (
+        "This study from Sub-Saharan Africa confirms that hypertension is the single strongest independent risk factor for "
+        "AF in T2DM patients in the region (OR ~3), providing important local epidemiological data to support guideline "
+        "recommendations for universal blood pressure control in diabetic populations. "
+        "From a Medical Affairs perspective, the data support the case for integrating ECG-based AF screening into diabetes "
+        "care protocols in African health systems, creating opportunities to position antihypertensive agents within broader "
+        "cardiovascular risk reduction programs. "
+        "Engaging African academic KOLs to publish regional prevalence data and advocate for resourced screening programs "
+        "represents a key Medical Affairs action."
+    ),
+  },
+  {
+    "pmid": "42552114",
+    "title": "Proteomics in cardiology: research and practice.",
+    "journal": "Heart (British Cardiac Society)",
+    "pub_date": "2026-08-04",
+    "tier": "Tier 2", "if_est": "10–20",
+    "findings": (
+        "This review from the Nuffield Department of Population Health, University of Oxford, describes the application "
+        "of high-throughput affinity-based proteomic assays (capable of quantifying thousands of plasma proteins) in "
+        "large epidemiological and clinical studies to advance cardiovascular precision medicine. "
+        "Hypertension is acknowledged as one of the well-established modifiable determinants of cardiovascular disease, "
+        "but the review emphasizes that established risk factors do not fully explain temporal trends and geographic "
+        "variations in CVD rates. "
+        "Key applications discussed include improved risk prediction, disease diagnosis and patient stratification, "
+        "better understanding of pathophysiology, and identification of novel and repurposed therapeutic targets. "
+        "The authors note that future proteomics studies should increase sample size, number of proteins measured "
+        "reliably through multiple platforms, and ancestry diversity to accelerate clinical translation. "
+        "Being a narrative review, it lacks original data and may have selection bias in cited studies; the field "
+        "is still evolving with limited validated clinical tools."
+    ),
+    "implications": (
+        "The emergence of large-scale plasma proteomics presents transformative opportunities for identifying "
+        "hypertension-specific protein signatures that could serve as novel biomarkers for drug response, disease "
+        "stratification, or early organ damage detection beyond conventional blood pressure measurements. "
+        "From a Medical Affairs perspective, investment in proteomics collaborations could accelerate the identification "
+        "of companion biomarkers to differentiate antihypertensive product value propositions in precision medicine. "
+        "Engagement with Oxford-based KOLs and population health researchers on proteomic risk prediction studies "
+        "represents a high-value strategic opportunity for pipeline differentiation."
+    ),
+  },
+  {
+    "pmid": "42551818",
+    "title": "Pulmonary Arterial Hypertension-Targeted Therapy for Pulmonary Hypertension Associated with Left Heart Disease: Bayesian and Frequentist Meta-Analysis of Randomized Controlled Trials.",
+    "journal": "The American Journal of Cardiology",
+    "pub_date": "2026-08-04",
+    "tier": "NA", "if_est": "NA",
+    "findings": (
+        "This meta-analysis searched PUBMED and EMBASE through October 2025 and identified 8 randomized controlled trials "
+        "totaling 775 patients evaluating PAH-targeted therapies (endothelin receptor antagonists and phosphodiesterase-5 "
+        "inhibitors) versus placebo in pulmonary hypertension associated with left heart disease (PH-LHD). "
+        "In Bayesian random-effects meta-analysis, the probability that PAH-targeted therapy increased all-cause mortality "
+        "was 79.9% (risk ratio 1.55; 95% credible interval 0.51–4.36), while the probability of increased adverse events "
+        "was 94.8% (RR 1.13; 95% CrI 0.96–1.38). "
+        "In frequentist meta-analysis, PAH-targeted therapy was associated with significantly increased adverse events "
+        "(RR 1.15; 95% CI 1.04–1.28), with no significant difference in all-cause mortality. "
+        "Subgroup analysis found no material difference between HFrEF and HFpEF subgroups, though HFpEF showed a 62% "
+        "probability of a smaller risk increase. "
+        "Key limitations include the small total number of RCTs (n=8) and patients (n=775) and the inability to assess "
+        "newer PAH therapies not included in available trials."
+    ),
+    "implications": (
+        "This meta-analysis delivers a critical safety signal against off-label use of PAH-targeted vasodilators in "
+        "left-heart-associated pulmonary hypertension, with high probability of harm—a finding directly relevant "
+        "for medical education and pharmacovigilance. "
+        "Medical Affairs teams supporting PAH therapies should use these data to refine product labeling language, "
+        "strengthen contraindication messaging for PH-LHD patients, and educate prescribers on appropriate patient "
+        "selection criteria. "
+        "KOL engagement should focus on pulmonary hypertension classification centers and heart failure specialists "
+        "to prevent inappropriate prescribing and reinforce guideline-concordant management."
+    ),
+  },
+  {
+    "pmid": "42571652",
+    "title": "Bidirectional links between heart failure and cancer: shared pathophysiology, clinical outcomes and collaborative management.",
+    "journal": "Heart (British Cardiac Society)",
+    "pub_date": "2026-08-03",
+    "tier": "Tier 2", "if_est": "10–20",
+    "findings": (
+        "This comprehensive review from the University of California Davis examines the bidirectional relationship "
+        "between heart failure and cancer, with hypertension identified as one of the key shared modifiable risk "
+        "factors alongside diabetes, smoking, and obesity. "
+        "Epidemiological data show that cancer patients face substantially elevated HF risk from cardiotoxic therapies "
+        "(chemotherapy, targeted agents, immunotherapy, radiation), while HF patients have markedly increased cancer incidence. "
+        "Shared pathophysiological mechanisms include chronic inflammation, neurohormonal activation, oxidative stress, "
+        "dysregulated angiogenesis, and clonal hematopoiesis of indeterminate potential (CHIP) as a novel biological link. "
+        "The review highlights underexplored areas including management of advanced metastatic cancer in HF patients, "
+        "use of advanced HF therapies in cancer patients, and disparities in cardio-oncology care. "
+        "As a narrative review, it is subject to citation selection bias and does not quantify the independent contribution "
+        "of hypertension versus other shared risk factors."
+    ),
+    "implications": (
+        "The bidirectional HF-cancer relationship places hypertension management at the center of cardio-oncology, "
+        "as rigorous blood pressure control is critical both to prevent HF that limits cancer treatment and to reduce "
+        "long-term cancer incidence in HF survivors. "
+        "Medical Affairs should engage cardio-oncology KOLs at major cancer centers to position antihypertensive agents "
+        "within survivorship care pathways and emphasize their role in both cardiovascular and potentially oncological "
+        "risk reduction. "
+        "Investment in real-world evidence studies examining antihypertensive use in oncology patients could yield "
+        "differentiated data for product positioning in the growing cardio-oncology market."
+    ),
+  },
+  {
+    "pmid": "42571014",
+    "title": "Baseline, repeated-measure burden, and two-time-point patterns of the triglyceride-glucose index-visceral lipid ratio (TyG-VLR) and incident cardiovascular disease in cardiovascular-kidney-metabolic (CKM) syndrome stages 0-3.",
+    "journal": "Cardiovascular Diabetology",
+    "pub_date": "2026-07-25",
+    "tier": "NA", "if_est": "NA",
+    "findings": (
+        "This longitudinal analysis of the China Health and Retirement Longitudinal Study (CHARLS) included 7,132 "
+        "participants with cardiovascular-kidney-metabolic (CKM) syndrome stages 0–3 (no overt CVD) with median "
+        "follow-up of 9 years, examining a novel composite metabolic marker TyG-VLR (triglyceride-glucose index "
+        "multiplied by visceral lipid ratio). "
+        "Hypertension was one of the operationalized components of CKM staging criteria, alongside prediabetes/diabetes, "
+        "dyslipidemia, chronic kidney disease, and metabolic syndrome. "
+        "Each 1-SD increase in baseline TyG-VLR was associated with incident CVD (HR 1.15; 95% CI 1.10–1.21), "
+        "heart disease (HR 1.11), and stroke (HR 1.21; 95% CI 1.12–1.31). "
+        "Repeated-measure TyG-VLR burden predicted CVD (HR 1.21; 95% CI 1.12–1.30), and the highest two-time-point "
+        "pattern cluster had 51% higher CVD risk than the lowest. "
+        "Limitations include the Chinese-only cohort, limited CHARLS-available metabolic variables, and modest incremental "
+        "discrimination over traditional risk factors."
+    ),
+    "implications": (
+        "The TyG-VLR marker captures combined visceral adiposity, lipid dysmetabolism, and insulin resistance—a composite "
+        "risk profile highly prevalent in hypertensive patients with metabolic syndrome—suggesting a role for this marker "
+        "in identifying hypertensive individuals at highest CVD risk who may benefit from intensified intervention. "
+        "From a Medical Affairs standpoint, these data support the positioning of antihypertensive agents with favorable "
+        "metabolic profiles (ARBs, SGLT2 inhibitors combined with antihypertensives) in the CKM-syndrome population. "
+        "Collaboration with Chinese academic KOLs to validate TyG-VLR in interventional studies could provide differentiated "
+        "evidence for precision antihypertensive prescribing in metabolic high-risk groups."
+    ),
+  },
+  {
+    "pmid": "42571036",
+    "title": "Determinants of hospitalization among Indonesian Hajj pilgrims in Saudi Arabia: a nationwide retrospective cohort study.",
+    "journal": "Annals of Saudi Medicine",
+    "pub_date": "2026-08-06",
+    "tier": "NA", "if_est": "NA",
+    "findings": (
+        "This nationwide retrospective cohort study analyzed data from 876,700 Indonesian Hajj pilgrims across the "
+        "2016–2019 and 2022 Hajj seasons using the Integrated Hajj Computerized System for Health (Siskohatkes). "
+        "Overall, 1.02% (n=8,978) of pilgrims were hospitalized during the Hajj period, with age ≥65 years "
+        "being the strongest predictor (aOR 8.31; 95% CI 7.39–9.34), accounting for 49.8% of attributable risk. "
+        "Diabetes alone (aOR 2.34) and diabetes with hypertension (aOR 2.23; 95% CI 2.07–2.39) were both significant "
+        "independent predictors of hospitalization; the combination accounted for a substantial proportion of preventable "
+        "hospitalizations. "
+        "The most common primary diagnoses were pneumonia (36.7%), COPD (21.4%), and myocardial infarction/coronary "
+        "heart disease (12.4%). "
+        "Limitations include information bias inherent in administrative data and limited availability of clinical and "
+        "behavioral covariates such as medication adherence and physical activity levels."
+    ),
+    "implications": (
+        "The finding that the diabetes-hypertension comorbidity roughly doubles hospitalization risk during mass gatherings "
+        "reinforces the critical importance of optimized pre-event cardiometabolic management—a real-world effectiveness "
+        "context that supports targeted antihypertensive and antidiabetic treatment in high-risk pilgrims. "
+        "From a Medical Affairs perspective, this data set validates the need for systematic pre-departure screening programs "
+        "for hypertension and diabetes in Muslim-majority markets (Indonesia, Malaysia, Pakistan), creating engagement "
+        "opportunities with public health authorities and primary care KOLs. "
+        "Future research should assess whether optimized BP control prior to Hajj reduces hospitalization rates, "
+        "providing a pragmatic endpoint for real-world evidence studies."
+    ),
+  },
+  {
+    "pmid": "42571070",
+    "title": "Comparative analysis of three standard diagnostic criteria to detect prediabetes and diabetes in first degree relatives of people with T2DM.",
+    "journal": "Journal of Diabetes and Metabolic Disorders",
+    "pub_date": "2026-08-07",
+    "tier": "NA", "if_est": "NA",
+    "findings": (
+        "This cross-sectional study enrolled 1,029 first-degree relatives (FDRs) of patients with type 2 diabetes "
+        "mellitus (T2DM) in Iran, performing anthropometric, blood pressure, and biochemical assessments including "
+        "FPG, HbA1c, lipid profile, and 2-hour OGTT to compare diagnostic criteria for prediabetes and diabetes. "
+        "The prevalence of prediabetes was 39.1% and diabetes was 9.2% using any single criterion; FPG-based "
+        "prediabetes prevalence was 18.4%, OGTT-based 18.0%, and HbA1c-based 30.9%. "
+        "Multivariable logistic regression identified older age, overweight/obesity, and hypertension as independently "
+        "associated with higher odds of both prediabetes and diabetes; men had higher diabetes risk than women. "
+        "Fair-to-moderate agreement between criteria was observed, with highest concordance between 2-h PG and HbA1c; "
+        "FPG showed the lowest diagnostic sensitivity for both conditions. "
+        "Key limitations are the cross-sectional single-center design and restriction to FDRs of T2DM patients "
+        "at a tertiary Iranian hospital, limiting generalizability."
+    ),
+    "implications": (
+        "The independent association of hypertension with dysglycemia in high-risk relatives of T2DM patients supports "
+        "integrated cardiometabolic screening protocols—identifying hypertensive individuals as a priority group for "
+        "diabetes prevention programs. "
+        "Medical Affairs can leverage this data to support positioning of antihypertensive agents with favorable "
+        "glycemic profiles (particularly RAS inhibitors and CCBs) in pre-diabetic populations, highlighting the "
+        "potential to delay or prevent dual cardiometabolic disease. "
+        "Collaboration with endocrinology KOLs on combined hypertension-diabetes screening initiatives would strengthen "
+        "the real-world evidence base for integrated prevention and support regulatory discussions around cardiovascular "
+        "outcome claims."
+    ),
+  },
+  {
+    "pmid": "42571216",
+    "title": "Time to diabetic nephropathy and its predictors among adult diabetic patients at public general and referral hospitals in South Wollo Zone, Northeast Ethiopia: A retrospective follow up study.",
+    "journal": "SAGE Open Medicine",
+    "pub_date": "2026-08-06",
+    "tier": "NA", "if_est": "NA",
+    "findings": (
+        "This retrospective follow-up study tracked 408 adult diabetic patients in Northeast Ethiopia over a 10-year "
+        "period (December 2012–December 2022), using Kaplan–Meier survival curves and Cox proportional hazards models "
+        "to identify predictors of diabetic nephropathy (DN). "
+        "The overall incidence of DN was 17.4% (71 patients) with an incidence density of 2.35 per 1000 person-months "
+        "(95% CI 1.86–2.97) and a median survival time of 98 months (95% CI 95–105 months). "
+        "Hypertension was independently associated with accelerated progression to DN (adjusted HR 1.81; 95% CI 1.01–3.24), "
+        "alongside poor glycemic control (HbA1c ≥8%, AHR 1.93) and low HDL (AHR 0.399 for protective effect). "
+        "Female sex was associated with significantly lower DN risk (AHR 0.293; 95% CI 0.154–0.555) after adjustment. "
+        "Limitations include the retrospective single-center design, limited availability of urinary albumin data, "
+        "and potential misclassification in a resource-constrained setting."
+    ),
+    "implications": (
+        "The near-doubling of DN risk in diabetic patients with concurrent hypertension (AHR 1.81) reinforces hypertension "
+        "as a key modifiable risk factor for renal progression in African populations, supporting the prioritization of "
+        "blood pressure control in diabetes management guidelines for Sub-Saharan Africa. "
+        "From a Medical Affairs perspective, RAS inhibitors with demonstrated renoprotective effects should be positioned "
+        "as first-line antihypertensives in diabetic patients across African markets, supported by local epidemiological "
+        "data such as this Ethiopian cohort. "
+        "KOL engagement with nephrology and internal medicine specialists in East Africa could facilitate guideline "
+        "uptake and generate real-world evidence on BP control targets for DN prevention."
+    ),
+  },
+  {
+    "pmid": "42552102",
+    "title": "Risk of glaucoma among patients using tadalafil for lower urinary tract symptoms: a multinational cohort study.",
+    "journal": "The British Journal of Ophthalmology",
+    "pub_date": "2026-08-04",
+    "tier": "NA", "if_est": "NA",
+    "findings": (
+        "This multinational retrospective cohort study using the TriNetX database enrolled men aged ≥40 years with "
+        "lower urinary tract symptoms (LUTS) between 2012 and 2022, propensity-score matching 36,927 tadalafil users "
+        "with 36,927 non-PDE5i users for age, race, comorbidities, renal function, and concomitant medications. "
+        "Tadalafil use was associated with a 22% increased risk of glaucoma (HR 1.22; 95% CI 1.12–1.33) at up to "
+        "5 years, including significantly elevated risks for ocular hypertension (HR 1.32), primary open-angle glaucoma "
+        "(HR 1.33), and initiation of glaucoma treatment (HR 1.33). "
+        "The 5-year cumulative incidence was 3.93% in tadalafil users versus 3.16% in non-users (p<0.001), "
+        "with consistent risk in men over 50 years and across racial and comorbidity subgroups. "
+        "No significant associations were observed for low-tension or primary angle-closure glaucoma subtypes. "
+        "Limitations include residual confounding possible in the propensity-score approach, restriction to male patients, "
+        "and the pharmacoepidemiological nature of the data."
+    ),
+    "implications": (
+        "The association between tadalafil use and ocular hypertension is a noteworthy pharmacovigilance signal that, "
+        "while not specific to systemic arterial hypertension, has indirect relevance given frequent co-prescription of "
+        "PDE5 inhibitors in hypertensive men with LUTS or erectile dysfunction. "
+        "Medical Affairs teams should monitor whether this signal requires updated prescribing information and develop "
+        "educational materials for urologists and ophthalmologists about the need for baseline eye pressure assessment "
+        "in high-risk patients. "
+        "Future real-world studies examining ocular outcomes in hypertensive patients on PDE5i compared to alternative "
+        "LUTS treatments would provide actionable data for clinical guidance."
+    ),
+  },
+  {
+    "pmid": "42551927",
+    "title": "[Comparison of Cisplatin plus Etoposide and Carboplatin plus Etoposide in Chemoradiotherapy for Limited-Stage Small Cell Lung Cancer—A Single-Institution Retrospective Study].",
+    "journal": "Gan to Kagaku Ryoho (Cancer & Chemotherapy)",
+    "pub_date": "2026-07",
+    "tier": "NA", "if_est": "NA",
+    "findings": (
+        "This single-institution retrospective study compared progression-free survival (PFS) between cisplatin-etoposide (PE) "
+        "and carboplatin-etoposide (CE) chemoradiotherapy in 43 patients with limited-stage small cell lung cancer (LS-SCLC) "
+        "treated between March 2005 and March 2025 at a department including cardiology, pulmonology, hypertension, and nephrology. "
+        "The median PFS was 13.5 months for PE (95% CI 10.0–NA) and 9.9 months for CE (95% CI 6.8–NA), with no statistically "
+        "significant difference (p=0.369), and an adjusted hazard ratio for PE vs CE of 0.85 (95% CI 0.37–1.97; p=0.702). "
+        "Grade ≥3 neutropenia occurred in 95.8% (PE) versus 89.5% (CE), while febrile neutropenia was significantly more "
+        "common with PE (50.0%) versus CE (15.8%, p=0.026). "
+        "This is a Japanese-language study; the hypertension context is limited to the institutional department affiliation "
+        "rather than being a primary study endpoint or population characteristic. "
+        "The small sample size (n=43) and retrospective single-center design substantially limit statistical power and "
+        "generalizability."
+    ),
+    "implications": (
+        "This study has minimal direct relevance to arterial hypertension management or antihypertensive pharmacology; "
+        "it was retrieved due to departmental affiliation with hypertension and nephrology services rather than "
+        "hypertension-specific content. "
+        "From a Medical Affairs perspective in hypertension, this article does not provide actionable insights for "
+        "product positioning, KOL strategy, or guideline development in the hypertension space. "
+        "It serves as a reminder that PubMed searches may retrieve tangentially related articles from mixed departments, "
+        "and internal filtering criteria for the veille should be refined to prioritize arterial hypertension as "
+        "the primary study endpoint."
+    ),
+  },
+],  # end T1
+
+# ── TOPIC 2: ACE Inhibitors ──────────────────────────────────────────────────
+"T2": [
+  {
+    "pmid": "42571866",
+    "title": "Molecular basis of angiotensin-converting enzyme 1 selectivity of food-derived anti-hypertensive peptides.",
+    "journal": "International Journal of Biological Macromolecules",
+    "pub_date": "2026-08-09",
+    "tier": "NA", "if_est": "NA",
+    "findings": (
+        "This in vitro and computational study from UAE University investigated the molecular basis of ACE1 versus ACE2 "
+        "selectivity for six naturally occurring food-derived antihypertensive peptides (IPP, IRW, YAKPVA, VPP, and others) "
+        "and seven sequence-reordered variants, combining ACE1 and ACE2 inhibition assays with molecular docking and "
+        "500-nanosecond molecular dynamics (MD) simulations. "
+        "The natural peptides IPP, IRW, YAKPVA, and VPP showed the lowest IC50 values against ACE1, while modified analogues "
+        "displayed markedly weaker inhibition, suggesting that natural sequence conformation is critical for binding efficacy. "
+        "Docking to ACE2 yielded weaker binding and negligible inhibition, confirming selective ACE1 targeting by the natural peptides. "
+        "MD trajectories revealed that the peptides form a network of residue-specific interactions within the ACE1 active site "
+        "that are not replicated at ACE2, providing structural rationale for selectivity. "
+        "Limitations include the absence of in vivo data, no assessment of peptide bioavailability or metabolic stability, "
+        "and the in silico nature of selectivity predictions requiring experimental validation."
+    ),
+    "implications": (
+        "The structural insights into ACE1 versus ACE2 selectivity for food-derived peptides provide a molecular scaffold "
+        "that could inform the design of next-generation ACE1-selective antihypertensive peptides that preserve ACE2 "
+        "function—particularly relevant given ACE2's role in SARS-CoV-2 entry and RAS homeostasis. "
+        "From a Medical Affairs standpoint, this early-stage discovery research could be monitored as a pipeline "
+        "opportunity for natural product-derived antihypertensive supplementation strategies, with potential regulatory "
+        "implications for nutraceutical-drug interactions in hypertensive patients. "
+        "Engagement with academic pharmacology and biochemistry KOLs working on peptide-based antihypertensives could "
+        "position the company ahead of emerging competition in this niche but growing research area."
+    ),
+  },
+  {
+    "pmid": "42571325",
+    "title": "Urinary nephrin as an early biomarker of podocyte dysfunction in essential hypertension: a stage-stratified study from Bukhara, Uzbekistan.",
+    "journal": "Frontiers in Cardiovascular Medicine",
+    "pub_date": "2026-07-24",
+    "tier": "NA", "if_est": "NA",
+    "findings": (
+        "This prospective single-center study enrolled 60 adults with essential hypertension stratified by stage "
+        "(Stages I, II, III; n=20 per group) in Bukhara, Uzbekistan, measuring urinary nephrin, serum cystatin-C, "
+        "TGF-beta1, aldosterone, and VEGF-A by ELISA at baseline and after six months of ACE inhibitor or ARB treatment "
+        "(with eplerenone where indicated). "
+        "Urinary nephrin rose progressively across hypertension stages: 91.9 ± 8.3 ng/mL (Stage I), 124.9 ± 9.3 (Stage II), "
+        "164.5 ± 9.7 (Stage III), and was already elevated in Stage I despite normal creatinine, cystatin-C, and eGFR. "
+        "Nephrinuria correlated significantly with systolic blood pressure (r=0.58), aldosterone (r=0.54), and microalbuminuria "
+        "(r=0.71), and inversely with eGFR (r=-0.74) and renal functional reserve (r=-0.76; all p<0.01). "
+        "After 6 months of treatment, urinary nephrin declined by 32%, 31%, and 23% across stages respectively, with parallel "
+        "reductions in TGF-beta1, VEGF-A, and aldosterone and partial renal functional reserve recovery. "
+        "Key limitations include the small sample size (n=60), single-center Central Asian design, and absence of a placebo "
+        "control group limiting attribution of nephrin decline to therapy versus disease trajectory."
+    ),
+    "implications": (
+        "Urinary nephrin as a pre-conventional-marker stage biomarker of podocyte injury in hypertension represents a "
+        "compelling early endpoint that could shift clinical monitoring paradigms from late (proteinuria/creatinine) "
+        "to early (nephrin) detection of hypertensive nephropathy—directly supporting the value proposition of "
+        "nephroprotective antihypertensives. "
+        "From a Medical Affairs perspective, this data supports positioning ACE inhibitors and ARBs—whose use in the "
+        "study was associated with 23–32% reductions in nephrinuria—as having measurable early renoprotective "
+        "benefits beyond blood pressure lowering alone. "
+        "Investment in larger confirmatory studies of urinary nephrin as a pharmacodynamic biomarker for RAS-blocking "
+        "therapy in hypertensive nephropathy would strengthen regulatory submissions and KOL differentiation messaging."
+    ),
+  },
+],  # end T2
+
+# ── TOPIC 3: Angiotensin Receptor Blockers ──────────────────────────────────
+"T3": [
+  {
+    "pmid": "42550893",
+    "title": "Activation of the angiotensin II type I receptor by a nonpeptide agonist.",
+    "journal": "Proceedings of the National Academy of Sciences (PNAS)",
+    "pub_date": "2026-08-04",
+    "tier": "NA", "if_est": "NA",
+    "findings": (
+        "This structural pharmacology study from Harvard Medical School and Duke University revisited L-162,313, "
+        "a prototype nonpeptide AT1R agonist identified three decades ago, to determine how an antagonist-like chemical "
+        "scaffold can activate the angiotensin II type I receptor (AT1R), using molecular docking and 500-nanosecond "
+        "molecular dynamics simulations combined with in vitro functional assays. "
+        "L-162,313 was found to bind AT1R in a manner similar to antagonists (occupying the same binding pocket) but, "
+        "unlike antagonists, engages the same activation switches as peptide agonists—resolving a long-standing "
+        "pharmacological paradox about how an antagonist-like scaffold can produce agonism. "
+        "Spatial relationship mapping allowed the researchers to design a small library of L-162,313 derivatives "
+        "with predicted and confirmed graded potency—derivatives with expected reduced or enhanced agonist activity "
+        "behaved as predicted, validating the structural model. "
+        "The AT1R is one of the most successful pharmacological targets for hypertension treatment, and this work "
+        "provides a foundation for generating more efficacious small molecule AT1R agonists, which have distinct "
+        "mechanistic implications from existing antagonist-class ARBs. "
+        "Limitations include the absence of in vivo validation and the speculative nature of the therapeutic applications "
+        "of AT1R agonism in hypertension versus other conditions (e.g., heart failure, anemia of chronic kidney disease)."
+    ),
+    "implications": (
+        "Understanding the mechanism of nonpeptide AT1R agonism is foundational for potentially developing biased "
+        "AT1R agonists that selectively activate beneficial signaling pathways (e.g., beta-arrestin-mediated cardioprotection) "
+        "while avoiding detrimental vasoconstriction—representing a next frontier beyond classical ARB antagonism in hypertension. "
+        "Published in PNAS from Harvard and Duke, this mechanistic breakthrough will attract significant attention from "
+        "cardiovascular pharmacology KOLs and could trigger competitive intelligence responses from pipeline surveillance teams. "
+        "Medical Affairs should monitor L-162,313 derivative development and engage GPCR pharmacology KOLs to evaluate "
+        "implications for AT1R-directed pipeline assets and to anticipate future scientific discourse around biased "
+        "agonism at the AT1R."
+    ),
+  },
+],  # end T3
+
+# ── TOPIC 4: Calcium Channel Blockers ─────────────────────────────────────── (empty)
+"T4": [],
+
+# ── TOPIC 5: Diuretics and Beta-blockers ────────────────────────────────────
+"T5": [
+  {
+    "pmid": "42570622",
+    "title": "AQbD-guided development of a robust and green SI-RP-HPLC method for impurity profiling of an efonidipine hydrochloride ethanolate and chlorthalidone combination, with LC-MS and NMR-based identification of degradation product in efonidipine.",
+    "journal": "Journal of Chromatography A",
+    "pub_date": "2026-08-03",
+    "tier": "NA", "if_est": "NA",
+    "findings": (
+        "This analytical chemistry study from MIT World Peace University and Zuventus Healthcare (India) developed "
+        "a Quality by Design (QbD)-guided reverse-phase HPLC method for impurity profiling of a fixed-dose combination "
+        "tablet containing efonidipine hydrochloride ethanolate (EHE, a calcium channel blocker) and chlorthalidone "
+        "(CTD, a thiazide-like diuretic) used for the management of hypertension. "
+        "Critical method parameters including mobile phase composition and pH were systematically optimized using QbD "
+        "design of experiments to ensure method robustness across validated operating ranges on a Zorbax SB C8 column. "
+        "A photolytic degradation product of efonidipine was identified as Efonidipine Related Compound A, "
+        "with its structure confirmed by LC-MS and NMR spectroscopy, and a plausible photolytic degradation pathway proposed. "
+        "The validated green analytical method demonstrated excellent resolution, precision, and reproducibility across "
+        "multiple batches, meeting ICH stability-testing guidelines. "
+        "Limitations include the focus on a single combination product in an Indian pharmaceutical context, with no "
+        "clinical efficacy or safety data provided."
+    ),
+    "implications": (
+        "The development of validated QbD-optimized analytical methods for chlorthalidone-containing fixed-dose "
+        "combinations reflects the growing regulatory emphasis on quality-by-design in antihypertensive combination "
+        "product development, which has direct relevance for pharmaceutical manufacturers seeking global market approvals. "
+        "From a Medical Affairs perspective, the identification of a photolytic degradation pathway in efonidipine "
+        "is relevant for product stability counseling and storage guidance for the efonidipine-chlorthalidone combination "
+        "in markets where this product is available. "
+        "Medical Affairs teams should collaborate with regulatory and CMC colleagues to ensure that this type of "
+        "analytical characterization data is incorporated into product information updates and healthcare provider "
+        "education on proper antihypertensive storage."
+    ),
+  },
+],  # end T5
+
+# ── TOPIC 6: Clinical Trials and Guidelines ─────────────────────────────────
+"T6": [
+  {
+    "pmid": "42571882",
+    "title": "Reply to the Comment on 'Sequential nephron blockade vs. sequential renin-angiotensin system blockade on central and ambulatory blood pressure in resistant hypertension: A randomized clinical trial'.",
+    "journal": "British Journal of Clinical Pharmacology",
+    "pub_date": "2026-08-09",
+    "tier": "NA", "if_est": "NA",
+    "findings": (
+        "This is a published letter (reply) from the investigators of a randomized clinical trial comparing sequential "
+        "nephron blockade versus sequential renin-angiotensin system (RAS) blockade on central and ambulatory blood "
+        "pressure in resistant hypertension, responding to a reader comment on their previously published trial results. "
+        "The full abstract is not available, and the reply context suggests the original trial evaluated central and "
+        "ambulatory BP as primary outcomes comparing these two treatment escalation strategies in resistant hypertension. "
+        "The letter format limits detailed quantitative assessment of the original trial's results or the specific "
+        "points of contention being addressed in the reply. "
+        "Resistant hypertension remains a major unmet clinical need, and this exchange reflects ongoing debate about "
+        "optimal sequential treatment strategies in patients not controlled on conventional triple therapy. "
+        "Key limitations of this entry include the absence of the primary clinical data in the letter format and "
+        "the need to access the original trial publication for full quantitative assessment."
+    ),
+    "implications": (
+        "The ongoing scientific dialogue about sequential nephron blockade versus RAS intensification in resistant "
+        "hypertension reflects the lack of consensus in current guidelines on fourth-line antihypertensive therapy, "
+        "representing a high-priority area for Medical Affairs in the resistant hypertension space. "
+        "Medical Affairs should access the original trial publication to fully assess the comparative efficacy of these "
+        "strategies, as the results may inform positioning of aldosterone antagonists (spironolactone) or ENaC blockers "
+        "in treatment algorithms for resistant hypertension management. "
+        "Engaging the trial investigators—who are evident KOLs in this field at FAMERP and UNICAMP, Brazil—could "
+        "accelerate scientific exchange and support regional Latin American guideline development."
+    ),
+  },
+  {
+    "pmid": "42570944",
+    "title": "Pulmonary hypertension and acute hypoxic respiratory failure in preterm neonates.",
+    "journal": "Journal of Perinatology",
+    "pub_date": "2026-08-08",
+    "tier": "NA", "if_est": "NA",
+    "findings": (
+        "This narrative review from the University of Maryland and Brown University comprehensively examines the "
+        "diagnosis and management of pulmonary hypertension (PH) in preterm infants with acute hypoxic respiratory "
+        "failure, describing the multiple overlapping pathophysiological mechanisms and distinct hemodynamic phenotypes. "
+        "Randomized trials have not demonstrated reductions in mortality or bronchopulmonary dysplasia (BPD) with "
+        "inhaled nitric oxide (iNO) in preterm infants, and concerns persist regarding increased risk of severe "
+        "intraventricular hemorrhage with iNO in this population. "
+        "Advances in targeted neonatal echocardiography and functional hemodynamic assessment have enhanced bedside "
+        "cardiovascular characterization, though integration into standardized management protocols remains inconsistent. "
+        "The review emphasizes phenotype-based management integrating clinical assessment, serial echocardiographic "
+        "evaluation, and targeted inotropic and vasoactive therapies. "
+        "As a narrative review, it is subject to citation selection bias and does not provide meta-analytic level "
+        "evidence; neonatal PH management evidence base remains limited."
+    ),
+    "implications": (
+        "Neonatal pulmonary hypertension is a distinct pathophysiological entity from adult arterial systemic hypertension; "
+        "this article has limited direct relevance to systemic hypertension Medical Affairs but signals an important "
+        "unmet need in the neonatal cardiovascular space. "
+        "Medical Affairs teams working in pediatric cardiovascular or pulmonary arterial hypertension should monitor "
+        "this evolving literature for iNO and vasoactive agent positioning in neonatal PH phenotypes. "
+        "Future research collaborations with neonatal-perinatal medicine KOLs on echocardiography-guided treatment "
+        "algorithms could generate evidence supporting the role of targeted therapies in this vulnerable population."
+    ),
+  },
+  {
+    "pmid": "42571353",
+    "title": "Large saccular aneurysms of the vertebrobasilar arteries with segmental chronic mural ectasia: A case report and review of management strategies.",
+    "journal": "Qatar Medical Journal",
+    "pub_date": "2026-06-22",
+    "tier": "NA", "if_est": "NA",
+    "findings": (
+        "This case report from Hamad Medical Corporation, Qatar, describes a 54-year-old man with hypertension and "
+        "ischemic cardiomyopathy who presented with confusion and unresponsiveness; neuroimaging revealed a large "
+        "basilar artery aneurysm with mural thrombus and posterior circulation infarcts. "
+        "Despite conservative management and planned angiography, the patient's condition rapidly deteriorated to "
+        "brain death within 36 hours, highlighting the high-risk clinical trajectory of large basilar aneurysms "
+        "with mural ectasia. "
+        "The case examines the rationale for initial conservative treatment, evaluates potential benefits of early "
+        "endovascular intervention, and integrates literature insights on thromboembolic risk, vessel integrity, "
+        "and intervention timing. "
+        "Hypertension is documented as a significant risk factor for basilar artery aneurysm development and rupture, "
+        "underscoring the cerebrovascular consequences of uncontrolled blood pressure. "
+        "Key limitations are inherent to the single-case-report format, with no comparative outcomes data or "
+        "ability to isolate the contribution of hypertension from other risk factors."
+    ),
+    "implications": (
+        "This case vividly illustrates the potentially fatal cerebrovascular consequences of hypertension-related "
+        "vasculopathy, reinforcing the critical importance of optimal blood pressure control as primary prevention "
+        "for vertebrobasilar aneurysm formation and rupture. "
+        "From a Medical Affairs perspective, cases like this strengthen the educational messaging around strict "
+        "hypertension management in patients with known or suspected intracranial vascular abnormalities, "
+        "supporting product positioning for agents with proven cerebrovascular risk reduction. "
+        "Collaboration with neurovascular KOLs and stroke specialists to highlight the hypertension-aneurysm "
+        "connection could support guideline advocacy for more aggressive BP targets in high-risk cerebrovascular "
+        "patients."
+    ),
+  },
+],  # end T6
+
+# ── TOPIC 7: Environment and Risk Factors ───────────────────────────────────
+"T7": [
+  {
+    "pmid": "42571142",
+    "title": "Secondary Adrenal Insufficiency Presenting With Severe Hyponatremia in an Elderly Patient With Primary Aldosteronism Suggesting Underlying Autonomous Cortisol Secretion.",
+    "journal": "Clinical Case Reports",
+    "pub_date": "2026-08-07",
+    "tier": "NA", "if_est": "NA",
+    "findings": (
+        "This case report from JCHO Saitama Northern Medical Center and Saitama Medical Center (Japan) describes "
+        "an elderly patient with primary aldosteronism who developed secondary adrenal insufficiency presenting "
+        "as severe hyponatremia under physiological stress, attributed to unrecognized autonomous cortisol secretion. "
+        "Primary aldosteronism (PA) is the most common cause of secondary hypertension, and this case illustrates "
+        "that concurrent autonomous cortisol secretion in PA patients can suppress the hypothalamic-pituitary-adrenal "
+        "axis, rendering patients vulnerable to adrenal insufficiency during stress. "
+        "The clinical presentation involved severe hyponatremia, which was the initial manifestation rather than "
+        "classic Cushingoid features, demonstrating that cortisol autonomy in PA can be subclinical until decompensation. "
+        "The case calls for clinician awareness to consider adrenal insufficiency in PA patients presenting with "
+        "unexplained clinical deterioration, particularly after unilateral adrenalectomy or during systemic illness. "
+        "Limitations are those inherent to single-case reports; the prevalence of this combined phenotype in PA "
+        "populations requires systematic study."
+    ),
+    "implications": (
+        "This case highlights an underrecognized complication of primary aldosteronism—the most prevalent form "
+        "of secondary hypertension—where concurrent autonomous cortisol secretion creates a clinically dangerous "
+        "HPA axis suppression that can manifest as hyponatremic crisis rather than typical Cushingoid features. "
+        "From a Medical Affairs perspective, this data supports the importance of comprehensive hormonal workup "
+        "(including cortisol autonomy testing) in all PA patients prior to adrenalectomy or major physiological "
+        "stress, informing KOL education programs around PA evaluation protocols and the growing focus on "
+        "MAPA (mild autonomous cortisol excess) in adrenal disorders. "
+        "Engagement with endocrinology and hypertension KOLs around the emerging concept of combined PA and "
+        "autonomous cortisol secretion could generate scientific interest and highlight unmet diagnostic needs "
+        "in secondary hypertension management."
+    ),
+  },
+  {
+    "pmid": "42571329",
+    "title": "Giant Left Atrial Myxoma Causing Functional Mitral Stenosis: A Minimally Invasive Approach.",
+    "journal": "Cureus",
+    "pub_date": "2026-08-08",
+    "tier": "NA", "if_est": "NA",
+    "findings": (
+        "This case report from Erasmus Hospital, Brussels, describes a 57-year-old woman with obesity and "
+        "hypercholesterolemia who presented with NYHA class III dyspnea; echocardiography revealed a giant "
+        "left atrial myxoma (4.7 × 4.8 cm) prolapsing into the left ventricle, causing a mean transmitral "
+        "gradient of 16 mmHg and severe pulmonary hypertension (estimated pulmonary artery systolic pressure ~80 mmHg). "
+        "Preoperative coronary CT confirmed atheromatosis without significant stenosis; the mass was successfully "
+        "resected within two weeks via minimally invasive thoracoscopic surgery with femoro-femoral cannulation "
+        "without preoperative anticoagulation, as decided by multidisciplinary heart team. "
+        "Postoperatively, the transmitral gradient and pulmonary artery pressures normalized; mild mitral "
+        "regurgitation remained at one-month follow-up with complete symptom resolution. "
+        "Histopathology confirmed cardiac myxoma (spindle-to-stellate cells, myxoid stroma, calretinin-positive). "
+        "Limitations include single-case design with no comparative outcomes data; the secondary nature of the "
+        "pulmonary hypertension limits generalizability to primary arterial hypertension."
+    ),
+    "implications": (
+        "This case illustrates how secondary pulmonary hypertension can develop rapidly from mechanical obstruction "
+        "in patients with underlying cardiovascular risk factors (obesity, hypercholesterolemia), emphasizing that "
+        "pulmonary hypertension diagnosis requires careful exclusion of structural causes before pharmacological "
+        "treatment is initiated. "
+        "From a Medical Affairs perspective in hypertension, this case serves as a reminder to include cardiac "
+        "structural evaluation in the diagnostic workup of new-onset or worsening pulmonary hypertension, "
+        "which is relevant for positioning echocardiographic guidelines in hypertension management protocols. "
+        "KOL engagement with cardiac surgery and heart team programs to emphasize multidisciplinary evaluation "
+        "of pulmonary hypertension phenotypes could inform development of differential diagnosis pathways that "
+        "appropriately triage patients to surgical versus pharmacological management."
+    ),
+  },
+  {
+    "pmid": "42571368",
+    "title": "Alterations in brain physiological pulsations in Parkinson's disease: a case-control study.",
+    "journal": "Neuroimage Reports",
+    "pub_date": "2026-07-30",
+    "tier": "NA", "if_est": "NA",
+    "findings": (
+        "This case-control study from the University of Alabama at Birmingham and the University of Calgary "
+        "compared brain physiological pulsations in 13 Parkinson's disease (PD) patients and 20 healthy controls "
+        "using magnetic resonance encephalography (MREG), an ultrafast 3D dynamic neuroimaging technique assessing "
+        "cardiovascular, respiratory, and low-frequency vasomotor spectral bands as proxies for glymphatic clearance. "
+        "PD participants demonstrated significantly reduced power in the cardiovascular frequency band and reduced "
+        "optical flow magnitude in the low-frequency vasomotor band in regions important for visual, cognitive, "
+        "and sensorimotor processing. "
+        "Glymphatic clearance impairment was proposed as a mechanism contributing to neurotoxin accumulation in PD, "
+        "with cardiovascular pulsatility playing a key role in driving glymphatic flow. "
+        "The study controlled for age and sex, though the small sample sizes (n=13, n=20) and case-control design "
+        "limit statistical power and causal inference. "
+        "The cardiovascular pulsation findings may have indirect relevance to hypertension given that arterial stiffness "
+        "and pulse wave characteristics in hypertensive individuals could similarly impact glymphatic function."
+    ),
+    "implications": (
+        "The observed impairment of cardiovascular pulsatility-driven glymphatic clearance in Parkinson's disease "
+        "raises the hypothesis that hypertension-induced arterial stiffness might similarly impair brain glymphatic "
+        "function and contribute to neurodegenerative proteinopathies—a potentially significant mechanism linking "
+        "hypertension to dementia risk that warrants investigation. "
+        "From a Medical Affairs standpoint, if cardiovascular pulsatility is confirmed as a mediator of glymphatic "
+        "dysfunction, antihypertensive agents that reduce arterial stiffness (ACE inhibitors, ARBs, CCBs) could "
+        "be positioned as neuroprotective agents—a highly differentiated endpoint beyond traditional BP reduction. "
+        "Engagement with neuroscience and vascular dementia KOLs on hypertension's potential role in glymphatic "
+        "impairment represents an emerging research frontier with long-term strategic value for Medical Affairs."
+    ),
+  },
+],  # end T7
+}  # end ARTICLES
+
+
+# ─────────────────────────────────────────────
+# HELPER: build one article HTML block
+# ─────────────────────────────────────────────
+def article_html(a):
+    url = f"https://pubmed.ncbi.nlm.nih.gov/{a['pmid']}/"
+    return f"""
+  <div style="margin-bottom: 20px; padding: 15px; border-left: 4px solid #1a5276; background: #f4f6f7;">
+    <h3 style="color: #1a5276; margin-top: 0;">{a['title']}</h3>
+    <p><strong>Revue :</strong> {a['journal']} | <strong>Tier :</strong> {a['tier']} | <strong>IF estime :</strong> {a['if_est']}</p>
+    <p><strong>Date de publication :</strong> {a['pub_date']}</p>
+    <p><strong>Resultats principaux :</strong> {a['findings']}</p>
+    <p><strong>Implications Medical Affairs :</strong> {a['implications']}</p>
+    <p><strong>Source :</strong> <a href="{url}">PubMed — PMID {a['pmid']}</a></p>
+  </div>"""
+
+
+# ─────────────────────────────────────────────
+# BUILD HTML
+# ─────────────────────────────────────────────
+TOPIC_NAMES = {
+    "T1": "Hypertension Epidemiology",
+    "T2": "Inhibiteurs de l'ECA (ACE Inhibitors)",
+    "T3": "Antagonistes des Recepteurs de l'Angiotensine (ARBs)",
+    "T4": "Inhibiteurs des Canaux Calciques (CCBs)",
+    "T5": "Diuretiques et Beta-bloquants",
+    "T6": "Essais Cliniques et Recommandations (Clinical Trials & Guidelines)",
+    "T7": "Environnement et Facteurs de Risque",
+}
+
+total = sum(len(v) for v in ARTICLES.values())
+
+sections = ""
+for i, (key, name) in enumerate(TOPIC_NAMES.items(), 1):
+    arts = ARTICLES[key]
+    n = len(arts)
+    sections += f'\n  <h2 style="color: #1a5276; border-bottom: 2px solid #1a5276; padding-bottom: 5px;">Theme {i} : {name} ({n} article{"s" if n != 1 else ""})</h2>\n'
+    if arts:
+        for a in arts:
+            sections += article_html(a)
+    else:
+        sections += """
+  <div style="padding: 12px; background: #fef9e7; border-left: 4px solid #f39c12; margin-bottom: 20px;">
+    <p style="margin: 0;">Aucun nouvel article indexe dans les dernieres 24 heures pour ce theme.</p>
+  </div>"""
+    sections += "\n  <hr />"
+
+html = f"""<!DOCTYPE html>
+<html>
+<body style="font-family: Arial, sans-serif; line-height: 1.6; color: #333; max-width: 900px; margin: auto;">
+  <h1 style="color: #1a5276;">Veille Scientifique — Hypertension Arterielle</h1>
+  <p><strong>Date :</strong> {TODAY}</p>
+  <p><strong>Periode :</strong> Articles indexes sur PubMed dans les dernieres 24 heures</p>
+  <p><strong>Total articles :</strong> {total} nouveaux articles sur 7 themes</p>
+  <hr />
+{sections}
+  <p style="font-size: 12px; color: #777;">Digest generated automatically for internal medical monitoring. Source: PubMed/NCBI.</p>
+</body>
+</html>"""
+
+with open(f"digest_{TODAY}.html", "w", encoding="utf-8") as f:
+    f.write(html)
+print(f"Digest written: digest_{TODAY}.html ({len(html):,} chars)")
+
+# ─────────────────────────────────────────────
+# UPDATE archive.json
+# ─────────────────────────────────────────────
+with open("archive.json", "r", encoding="utf-8") as f:
+    archive = json.load(f)
+
+archived_pmids = {a["pmid"] for a in archive}
+
+new_entries = []
+topic_map = {
+    "T1": "Hypertension Epidemiology",
+    "T2": "ACE Inhibitors",
+    "T3": "Angiotensin Receptor Blockers",
+    "T4": "Calcium Channel Blockers",
+    "T5": "Diuretics and Beta-blockers",
+    "T6": "Clinical Trials and Guidelines",
+    "T7": "Environment and Risk Factors",
+}
+
+for key, arts in ARTICLES.items():
+    for a in arts:
+        if a["pmid"] not in archived_pmids:
+            new_entries.append({
+                "pmid": a["pmid"],
+                "title": a["title"],
+                "journal": a["journal"],
+                "source_url": f"https://pubmed.ncbi.nlm.nih.gov/{a['pmid']}/",
+                "date_added": TODAY,
+                "topic": topic_map[key],
+            })
+            archived_pmids.add(a["pmid"])
+
+archive.extend(new_entries)
+
+with open("archive.json", "w", encoding="utf-8") as f:
+    json.dump(archive, f, ensure_ascii=False, indent=2)
+
+print(f"Archive updated: {len(new_entries)} new entries, total {len(archive)}")
+print(f"Total articles in digest: {total}")
+
+# Print tier distribution
+from collections import Counter
+tier_count = Counter()
+for key, arts in ARTICLES.items():
+    for a in arts:
+        tier_count[a["tier"]] += 1
+print("\nTier distribution:")
+for tier, count in sorted(tier_count.items()):
+    print(f"  {tier}: {count}")
